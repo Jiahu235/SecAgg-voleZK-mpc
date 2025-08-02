@@ -1,0 +1,544 @@
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+
+--------------- Client 0 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 1 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 2 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 3 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 4 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 5 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 6 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 7 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 8 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 9 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 10 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 11 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 12 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 13 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 14 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 15 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 16 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 17 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 18 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 19 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 20 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 21 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 22 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 23 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 24 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 25 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 26 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 27 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 28 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 29 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 30 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 31 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 32 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 33 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 34 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 35 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 36 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 37 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 38 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 39 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 40 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 41 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 42 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 43 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 44 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 45 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 46 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Client 47 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+
+--------------- Aggregetion running -----------------
+party: 1
+All time: 7.97377e+06 ms
+All time: 7973.77 s
+
+Time except verbose: 5.71154e+06 ms
+Time except verbose: 5711.54 s
+
+Swap Time: 3.06571e+06 ms
+Swap Time: 3065.71 s
+
+Time for ln: 107521 ms
+Time for ln: 107.521 s
+
+Time for l2: 0 ms
+Time for l2: 0 s
+
+Time for mult: 3.05989e+06 ms
+Time for mult: 3059.89 s
+
+Time for comp: 4559.85 ms
+Time for comp: 4.55985 s
+
+Time for wait: 607316 ms
+Time for wait: 607.316 s
+
+Time for mult-wait: 2.45257e+06 ms
+Time for mult-wait: 2452.57 s
+
+Actual time except verbose: 5.71028e+06 ms
+Actual time except verbose: 5710.28 s
+
+Actual time except verbose and wait time: 5.10297e+06 ms
+Actual time except verbose and wait time: 5102.97 s
+
+All communication (KB): 1.59417e+07
+All communication (MB): 15568.1
+
+Communication except verbose (KB): 1.47145e+07
+Communication except verbose (MB): 14369.6
+
+Ln communication (KB): 1.62745e+06
+Ln communication except (MB): 1589.31
+
+L2 communication (KB): 0
+L2 communication except (MB): 0
+
+Mult communication (KB): 4.66772e+06
+Mult communication except (MB): 4558.32
+
+Comp communication (KB): 2.8125
+Comp communication except (MB): 0.00274658
+
+Actual communication except verbose (KB): 7.21871e+06
+Actual communication except verbose (MB): 7049.52
+Actual communication except verbose (GB): 6.8843
+-------------- finish test -----------------

@@ -1,0 +1,1264 @@
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+
+--------------- Client 0 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 1 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 2 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 3 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 4 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 5 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 6 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 7 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 8 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 9 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 10 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 11 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 12 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 13 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 14 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 15 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 16 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 17 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 18 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 19 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 20 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 21 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 22 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 23 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 24 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 25 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 26 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 27 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 28 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 29 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 30 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 31 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 32 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 33 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 34 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 35 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 36 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 37 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 38 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 39 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 40 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 41 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 42 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 43 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 44 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 45 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 46 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 47 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 48 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 49 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 50 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 51 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 52 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 53 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 54 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 55 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 56 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 57 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 58 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 59 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 60 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 61 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 62 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 63 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 64 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 65 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 66 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 67 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 68 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 69 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 70 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 71 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 72 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 73 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 74 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 75 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 76 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 77 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 78 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 79 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 80 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 81 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 82 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 83 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 84 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 85 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 86 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 87 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 88 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 89 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 90 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 91 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 92 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 93 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 94 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 95 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 96 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 97 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 98 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Client 99 Check running -----------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+
+--------------- Aggregetion running -----------------
+party: 2
+All time: 615664 ms
+All time: 615.664 s
+
+Time except verbose: 578101 ms
+Time except verbose: 578.101 s
+
+Swap Time: 192589 ms
+Swap Time: 192.589 s
+
+Time for ln: 7737.05 ms
+Time for ln: 7.73705 s
+
+Time for l2: 124492 ms
+Time for l2: 124.492 s
+
+Time for mult: 182720 ms
+Time for mult: 182.72 s
+
+Time for comp: 724.532 ms
+Time for comp: 0.724532 s
+
+Time for wait: 66236 ms
+Time for wait: 66.236 s
+
+Time for mult-wait: 116484 ms
+Time for mult-wait: 116.484 s
+
+Actual time except verbose: 568956 ms
+Actual time except verbose: 568.956 s
+
+Actual time except verbose and wait time: 502720 ms
+Actual time except verbose and wait time: 502.72 s
+
+All communication (KB): 429097
+All communication (MB): 419.04
+
+Communication except verbose (KB): 358148
+Communication except verbose (MB): 349.754
+
+Ln communication (KB): 0.109375
+Ln communication except (MB): 0.000106812
+
+L2 communication (KB): 34912
+L2 communication except (MB): 34.0938
+
+Mult communication (KB): 760181
+Mult communication except (MB): 742.364
+
+Comp communication (KB): 1019.53
+Comp communication except (MB): 0.995636
+
+Actual communication except verbose (KB): 836261
+Actual communication except verbose (MB): 816.661
+Actual communication except verbose (GB): 0.797521
+-------------- finish test -----------------

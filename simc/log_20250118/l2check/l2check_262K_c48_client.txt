@@ -1,0 +1,102 @@
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- L2Check running ------------
+Truncation finished! 
+All L2 checks finished! 
+party: 2
+Time Taken: 21809 us
+Time Taken: 21.809 ms
+Time Taken: 0.021809 s
+Sent Data (B): 0
+Sent Data (KB): 0
+Sent Data (MB): 0
+-------------- finish test -----------------
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- L2Check running ------------
+Truncation finished! 
+All L2 checks finished! 
+party: 2
+Time Taken: 22495 us
+Time Taken: 22.495 ms
+Time Taken: 0.022495 s
+Sent Data (B): 0
+Sent Data (KB): 0
+Sent Data (MB): 0
+-------------- finish test -----------------
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- L2Check running ------------
+Truncation finished! 
+All L2 checks finished! 
+party: 2
+Time Taken: 21431 us
+Time Taken: 21.431 ms
+Time Taken: 0.021431 s
+Sent Data (B): 0
+Sent Data (KB): 0
+Sent Data (MB): 0
+-------------- finish test -----------------
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- L2Check running ------------
+Truncation finished! 
+All L2 checks finished! 
+party: 2
+Time Taken: 1.45501e+07 us
+Time Taken: 14550.1 ms
+Time Taken: 14.5501 s
+Sent Data (B): 0
+Sent Data (KB): 0
+Sent Data (MB): 0
+-------------- finish test -----------------
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- L2Check running ------------
+Truncation finished! 
+All L2 checks finished! 
+party: 2
+Time Taken: 1.44813e+07 us
+Time Taken: 14481.3 ms
+Time Taken: 14.4813 s
+Sent Data (B): 0
+Sent Data (KB): 0
+Sent Data (MB): 0
+-------------- finish test -----------------
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- L2Check running ------------
+Truncation finished! 
+All L2 checks finished! 
+party: 2
+Time Taken: 1.44507e+07 us
+Time Taken: 14450.7 ms
+Time Taken: 14.4507 s
+Sent Data (B): 0
+Sent Data (KB): 0
+Sent Data (MB): 0
+-------------- finish test -----------------

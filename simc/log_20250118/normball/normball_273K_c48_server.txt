@@ -1,0 +1,102 @@
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+party: 1
+Time Taken: 4.66923e+07 us
+Time Taken: 46692.3 ms
+Time Taken: 46.6923 s
+
+Time for wait: 863.571 ms
+Time for wait: 0.863571 s
+
+Actual time except verbose: 31638.8 ms
+Actual time except verbose: 31.6388 s
+
+Actual time except verbose and wait time: 30775.2 ms
+Actual time except verbose and wait time: 30.7752 s
+Sent Data (B): 57798712
+Sent Data (KB): 56444.1
+Sent Data (MB): 55.1211
+
+Actual communication except verbose (KB): 25578
+Actual communication except verbose (MB): 24.9785
+-------------- finish test -----------------
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+party: 1
+Time Taken: 4.66595e+07 us
+Time Taken: 46659.5 ms
+Time Taken: 46.6595 s
+
+Time for wait: 847.857 ms
+Time for wait: 0.847857 s
+
+Actual time except verbose: 31600.2 ms
+Actual time except verbose: 31.6002 s
+
+Actual time except verbose and wait time: 30752.4 ms
+Actual time except verbose and wait time: 30.7524 s
+Sent Data (B): 57799899
+Sent Data (KB): 56445.2
+Sent Data (MB): 55.1223
+
+Actual communication except verbose (KB): 25578.6
+Actual communication except verbose (MB): 24.9791
+-------------- finish test -----------------
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+party: 1
+Time Taken: 4.62786e+07 us
+Time Taken: 46278.6 ms
+Time Taken: 46.2786 s
+
+Time for wait: 899.412 ms
+Time for wait: 0.899412 s
+
+Actual time except verbose: 31306.3 ms
+Actual time except verbose: 31.3063 s
+
+Actual time except verbose and wait time: 30406.9 ms
+Actual time except verbose and wait time: 30.4069 s
+Sent Data (B): 57798897
+Sent Data (KB): 56444.2
+Sent Data (MB): 55.1213
+
+Actual communication except verbose (KB): 25579.1
+Actual communication except verbose (MB): 24.9796
+-------------- finish test -----------------

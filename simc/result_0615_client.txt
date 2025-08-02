@@ -1,0 +1,86 @@
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+
+--------------- Client 0 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- NormBall finish ------------
+
+--------------- Client 1 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- NormBall finish ------------
+
+--------------- Client 2 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- NormBall finish ------------
+
+--------------- Client 3 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- NormBall finish ------------
+
+--------------- Client 4 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- NormBall finish ------------
+
+--------------- Client 5 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- NormBall finish ------------
+
+--------------- Client 6 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- NormBall finish ------------
+
+--------------- Client 7 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- NormBall finish ------------
+
+--------------- Client 8 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- NormBall finish ------------
+
+--------------- Client 9 Check running -----------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- NormBall finish ------------
+
+--------------- Aggregetion running -----------------
+party: 2
+time: 3.91985e+09 us
+time: 3.91985e+06 ms
+time: 3919.85 s
+All communication (B): 1468572782
+All communication (KB): 1.43415e+06
+All communication (MB): 1400.54
+communication except verbose (B): 1225867612
+communication except verbose (KB): 1.19714e+06
+communication except verbose (MB): 1169.08
+-------------- finish test -----------------

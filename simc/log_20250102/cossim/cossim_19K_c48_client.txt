@@ -1,0 +1,108 @@
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+party: 2
+Time Taken: 5.64453e+06 us
+Time Taken: 5644.53 ms
+Time Taken: 5.64453 s
+
+Time for wait: 322.792 ms
+Time for wait: 0.322792 s
+
+Actual time except verbose: 5174.58 ms
+Actual time except verbose: 5.17458 s
+
+Actual time except verbose and wait time: 4851.79 ms
+Actual time except verbose and wait time: 4.85179 s
+Sent Data (B): 2023939
+Sent Data (KB): 1976
+Sent Data (MB): 1
+
+Actual communication except verbose (KB): 3811.39
+Actual communication except verbose (MB): 3.72206
+-------------- finish test -----------------
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+party: 2
+Time Taken: 5.75361e+06 us
+Time Taken: 5753.61 ms
+Time Taken: 5.75361 s
+
+Time for wait: 321.45 ms
+Time for wait: 0.32145 s
+
+Actual time except verbose: 5285.21 ms
+Actual time except verbose: 5.28521 s
+
+Actual time except verbose and wait time: 4963.76 ms
+Actual time except verbose and wait time: 4.96376 s
+Sent Data (B): 2023939
+Sent Data (KB): 1976
+Sent Data (MB): 1
+
+Actual communication except verbose (KB): 3811.28
+Actual communication except verbose (MB): 3.72195
+-------------- finish test -----------------
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- CosSim running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- CosSim finish ------------
+party: 2
+Time Taken: 5.65392e+06 us
+Time Taken: 5653.92 ms
+Time Taken: 5.65392 s
+
+Time for wait: 323.795 ms
+Time for wait: 0.323795 s
+
+Actual time except verbose: 5183.47 ms
+Actual time except verbose: 5.18347 s
+
+Actual time except verbose and wait time: 4859.67 ms
+Actual time except verbose and wait time: 4.85967 s
+Sent Data (B): 2023978
+Sent Data (KB): 1976
+Sent Data (MB): 1
+
+Actual communication except verbose (KB): 3811.11
+Actual communication except verbose (MB): 3.72179
+-------------- finish test -----------------

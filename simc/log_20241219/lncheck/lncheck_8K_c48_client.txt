@@ -1,0 +1,72 @@
+nohup: 忽略输入
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+party: 2
+Time Taken: 17682 us
+Time Taken: 17.682 ms
+Time Taken: 0.017682 s
+Sent Data (B): 0
+Sent Data (KB): 0
+Sent Data (MB): 0
+-------------- finish test -----------------
+nohup: 忽略输入
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+party: 2
+Time Taken: 17826 us
+Time Taken: 17.826 ms
+Time Taken: 0.017826 s
+Sent Data (B): 0
+Sent Data (KB): 0
+Sent Data (MB): 0
+-------------- finish test -----------------
+nohup: 忽略输入
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+party: 2
+Time Taken: 17829 us
+Time Taken: 17.829 ms
+Time Taken: 0.017829 s
+Sent Data (B): 0
+Sent Data (KB): 0
+Sent Data (MB): 0
+-------------- finish test -----------------

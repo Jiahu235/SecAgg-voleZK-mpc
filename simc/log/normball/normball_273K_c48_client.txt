@@ -1,0 +1,140 @@
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+party: 2
+Time Taken: 4.77415e+07 us
+Time Taken: 47741.5 ms
+Time Taken: 47.7415 s
+
+Actual time except verbose: 62402.6 ms
+Actual time except verbose: 62.4026 s
+Sent Data (B): 21514635
+Sent Data (KB): 21010
+Sent Data (MB): 20
+
+Actual communication except verbose (KB): 43086.5
+Actual communication except verbose (MB): 42.0767
+-------------- finish test -----------------
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+party: 2
+Time Taken: 4.77152e+07 us
+Time Taken: 47715.2 ms
+Time Taken: 47.7152 s
+
+Actual time except verbose: 62368.9 ms
+Actual time except verbose: 62.3689 s
+Sent Data (B): 21513446
+Sent Data (KB): 21009
+Sent Data (MB): 20
+
+Actual communication except verbose (KB): 43086.5
+Actual communication except verbose (MB): 42.0766
+-------------- finish test -----------------
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+party: 2
+Time Taken: 4.77133e+07 us
+Time Taken: 47713.3 ms
+Time Taken: 47.7133 s
+
+Actual time except verbose: 62421.2 ms
+Actual time except verbose: 62.4212 s
+Sent Data (B): 21513568
+Sent Data (KB): 21009
+Sent Data (MB): 20
+
+Actual communication except verbose (KB): 43086.4
+Actual communication except verbose (MB): 42.0765
+-------------- finish test -----------------
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+party: 2
+Time Taken: 4.83155e+07 us
+Time Taken: 48315.5 ms
+Time Taken: 48.3155 s
+
+Actual time except verbose: 63008.7 ms
+Actual time except verbose: 63.0087 s
+Sent Data (B): 21512735
+Sent Data (KB): 21008
+Sent Data (MB): 20
+
+Actual communication except verbose (KB): 43087.7
+Actual communication except verbose (MB): 42.0778
+-------------- finish test -----------------

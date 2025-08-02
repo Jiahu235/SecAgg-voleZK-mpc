@@ -1,0 +1,869 @@
+bin/test_fl_aggregation: error while loading shared libraries: libemp-zk.so: cannot dynamically load position-independent executable
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+
+--------------- Client 0 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 1 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 2 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 3 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 4 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 5 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 6 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 7 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 8 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 9 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 10 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 11 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 12 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 13 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 14 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 15 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 16 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 17 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 18 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 19 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 20 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 21 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 22 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 23 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 24 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 25 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 26 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 27 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 28 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 29 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 30 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 31 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 32 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 33 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 34 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 35 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 36 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 37 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 38 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 39 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 40 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 41 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 42 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 43 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 44 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 45 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 46 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 47 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 48 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 49 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 50 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 51 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 52 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 53 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 54 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 55 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 56 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 57 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 58 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 59 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 60 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 61 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 62 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 63 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 64 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 65 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 66 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 67 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 68 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 69 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 70 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 71 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 72 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 73 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 74 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 75 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 76 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 77 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 78 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 79 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 80 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 81 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 82 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 83 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 84 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 85 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 86 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 87 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 88 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 89 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 90 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 91 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 92 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 93 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 94 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 95 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 96 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 97 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 98 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Client 99 Check running -----------------
+---------- NormFiler running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- L2Check running ------------
+All L2 checks finished! 
+---------- NormFilter finish ------------
+
+--------------- Aggregetion running -----------------
+party: 1
+All time: 1.72482e+06 ms
+All time: 1724.82 s
+
+Time except verbose: 1.71909e+06 ms
+Time except verbose: 1719.09 s
+
+Time for ln: 45984.8 ms
+Time for ln: 45.9848 s
+
+Time for l2: 1.51587e+06 ms
+Time for l2: 1515.87 s
+
+Time for mult: 135984 ms
+Time for mult: 135.984 s
+
+Time for comp: 0 ms
+Time for comp: 0 s
+
+Time for wait: 70467.6 ms
+Time for wait: 70.4676 s
+
+Time for mult-wait: 65516 ms
+Time for mult-wait: 65.516 s
+
+Actual time except verbose: 1.71652e+06 ms
+Actual time except verbose: 1716.52 s
+
+Actual time except verbose and wait time: 1.64605e+06 ms
+Actual time except verbose and wait time: 1646.05 s
+
+All communication (KB): 7.56796e+06
+All communication (MB): 7390.59
+
+Communication except verbose (KB): 7.14222e+06
+Communication except verbose (MB): 6974.82
+
+Ln communication (KB): 1.56484e+06
+Ln communication except (MB): 1528.17
+
+L2 communication (KB): 628480
+L2 communication except (MB): 613.75
+
+Mult communication (KB): 1.64878e+06
+Mult communication except (MB): 1610.14
+
+Comp communication (KB): 0
+Comp communication except (MB): 0
+
+Actual communication except verbose (KB): 4.48329e+06
+Actual communication except verbose (MB): 4378.21
+Actual communication except verbose (GB): 4.2756
+-------------- finish test -----------------

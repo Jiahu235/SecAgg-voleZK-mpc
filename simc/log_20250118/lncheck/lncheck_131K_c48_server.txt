@@ -1,0 +1,96 @@
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+party: 1
+Time Taken: 190182 us
+Time Taken: 190.182 ms
+Time Taken: 0.190182 s
+Sent Data (B): 4456192
+Sent Data (KB): 4351.75
+Sent Data (MB): 4.24976
+-------------- finish test -----------------
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+party: 1
+Time Taken: 176747 us
+Time Taken: 176.747 ms
+Time Taken: 0.176747 s
+Sent Data (B): 4456192
+Sent Data (KB): 4351.75
+Sent Data (MB): 4.24976
+-------------- finish test -----------------
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+party: 1
+Time Taken: 179952 us
+Time Taken: 179.952 ms
+Time Taken: 0.179952 s
+Sent Data (B): 4456192
+Sent Data (KB): 4351.75
+Sent Data (MB): 4.24976
+-------------- finish test -----------------
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+party: 1
+Time Taken: 89807 us
+Time Taken: 89.807 ms
+Time Taken: 0.089807 s
+Sent Data (B): 4456192
+Sent Data (KB): 4351.75
+Sent Data (MB): 4.24976
+-------------- finish test -----------------
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+party: 1
+Time Taken: 91579 us
+Time Taken: 91.579 ms
+Time Taken: 0.091579 s
+Sent Data (B): 4456192
+Sent Data (KB): 4351.75
+Sent Data (MB): 4.24976
+-------------- finish test -----------------
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+party: 1
+Time Taken: 91896 us
+Time Taken: 91.896 ms
+Time Taken: 0.091896 s
+Sent Data (B): 4456192
+Sent Data (KB): 4351.75
+Sent Data (MB): 4.24976
+-------------- finish test -----------------

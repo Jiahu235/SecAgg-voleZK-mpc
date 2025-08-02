@@ -1,0 +1,93 @@
+nohup: 忽略输入
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+
+Time for offline: 3890.52 ms
+Time for offline: 3.89052 s
+Offline communication (B): 2042067
+Offline communication (KB): 1994.21
+Offline communication (MB): 1.94747
+-------------- start test -----------------
+
+Time for commit: 56.26 ms
+Time for commit: 0.05626 s
+commit communication (B): 4194304
+commit communication (KB): 4096
+commit communication (MB): 4
+---------- L2Check running ------------
+Truncation finished! 
+All L2 checks finished! 
+party: 1
+Time Taken: 2.88927e+07 us
+Time Taken: 28892.7 ms
+Time Taken: 28.8927 s
+Sent Data (B): 4192
+Sent Data (KB): 4.09375
+Sent Data (MB): 0.0039978
+-------------- finish test -----------------
+nohup: 忽略输入
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+
+Time for offline: 4080.5 ms
+Time for offline: 4.0805 s
+Offline communication (B): 2042067
+Offline communication (KB): 1994.21
+Offline communication (MB): 1.94747
+-------------- start test -----------------
+
+Time for commit: 66.898 ms
+Time for commit: 0.066898 s
+commit communication (B): 4194304
+commit communication (KB): 4096
+commit communication (MB): 4
+---------- L2Check running ------------
+Truncation finished! 
+All L2 checks finished! 
+party: 1
+Time Taken: 2.90222e+07 us
+Time Taken: 29022.2 ms
+Time Taken: 29.0222 s
+Sent Data (B): 4192
+Sent Data (KB): 4.09375
+Sent Data (MB): 0.0039978
+-------------- finish test -----------------
+nohup: 忽略输入
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+
+Time for offline: 4295.56 ms
+Time for offline: 4.29556 s
+Offline communication (B): 2042067
+Offline communication (KB): 1994.21
+Offline communication (MB): 1.94747
+-------------- start test -----------------
+
+Time for commit: 93.844 ms
+Time for commit: 0.093844 s
+commit communication (B): 4194304
+commit communication (KB): 4096
+commit communication (MB): 4
+---------- L2Check running ------------
+Truncation finished! 
+All L2 checks finished! 
+party: 1
+Time Taken: 2.88813e+07 us
+Time Taken: 28881.3 ms
+Time Taken: 28.8813 s
+Sent Data (B): 4192
+Sent Data (KB): 4.09375
+Sent Data (MB): 0.0039978
+-------------- finish test -----------------

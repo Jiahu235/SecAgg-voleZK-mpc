@@ -1,0 +1,144 @@
+nohup: 忽略输入
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+
+Time for offline: 5269.49 ms
+Time for offline: 5.26949 s
+Offline communication (B): 2954968
+Offline communication (KB): 2885.71
+Offline communication (MB): 2.81808
+-------------- start test -----------------
+
+Time for commit: 553.768 ms
+Time for commit: 0.553768 s
+commit communication (B): 0
+commit communication (KB): 0
+commit communication (MB): 0
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+party: 2
+Time Taken: 1.42159e+08 us
+Time Taken: 142159 ms
+Time Taken: 142.159 s
+
+Time for wait: 1572.1 ms
+Time for wait: 1.5721 s
+
+Actual time except verbose: 142166 ms
+Actual time except verbose: 142.166 s
+
+Actual time except verbose and wait time: 140594 ms
+Actual time except verbose and wait time: 140.594 s
+Sent Data (B): 63145483
+Sent Data (KB): 61665.5
+Sent Data (MB): 60.2202
+
+Actual communication except verbose (KB): 126708
+Actual communication except verbose (MB): 123.738
+-------------- finish test -----------------
+nohup: 忽略输入
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+
+Time for offline: 5545.55 ms
+Time for offline: 5.54555 s
+Offline communication (B): 2954968
+Offline communication (KB): 2885.71
+Offline communication (MB): 2.81808
+-------------- start test -----------------
+
+Time for commit: 550.995 ms
+Time for commit: 0.550995 s
+commit communication (B): 0
+commit communication (KB): 0
+commit communication (MB): 0
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+party: 2
+Time Taken: 1.42064e+08 us
+Time Taken: 142064 ms
+Time Taken: 142.064 s
+
+Time for wait: 1560.85 ms
+Time for wait: 1.56085 s
+
+Actual time except verbose: 142080 ms
+Actual time except verbose: 142.08 s
+
+Actual time except verbose and wait time: 140519 ms
+Actual time except verbose and wait time: 140.519 s
+Sent Data (B): 63145588
+Sent Data (KB): 61665.6
+Sent Data (MB): 60.2203
+
+Actual communication except verbose (KB): 126708
+Actual communication except verbose (MB): 123.738
+-------------- finish test -----------------
+nohup: 忽略输入
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+
+Time for offline: 6592.63 ms
+Time for offline: 6.59263 s
+Offline communication (B): 2954968
+Offline communication (KB): 2885.71
+Offline communication (MB): 2.81808
+-------------- start test -----------------
+
+Time for commit: 611.462 ms
+Time for commit: 0.611462 s
+commit communication (B): 0
+commit communication (KB): 0
+commit communication (MB): 0
+---------- NormBall running ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+---------- Vector multiplication running ------------
+---------- Vector multiplication finish ------------
+---------- Comparison running ------------
+---------- Comparison finish ------------
+---------- NormBall finish ------------
+party: 2
+Time Taken: 1.42235e+08 us
+Time Taken: 142235 ms
+Time Taken: 142.235 s
+
+Time for wait: 1557.82 ms
+Time for wait: 1.55782 s
+
+Actual time except verbose: 142251 ms
+Actual time except verbose: 142.251 s
+
+Actual time except verbose and wait time: 140693 ms
+Actual time except verbose and wait time: 140.693 s
+Sent Data (B): 63145369
+Sent Data (KB): 61665.4
+Sent Data (MB): 60.2201
+
+Actual communication except verbose (KB): 126708
+Actual communication except verbose (MB): 123.738
+-------------- finish test -----------------

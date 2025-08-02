@@ -1,0 +1,48 @@
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+party: 1
+Time Taken: 1.61768e+06 us
+Time Taken: 1617.68 ms
+Time Taken: 1.61768 s
+Sent Data (B): 30407712
+Sent Data (KB): 29695
+Sent Data (MB): 28
+-------------- finish test -----------------
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+party: 1
+Time Taken: 1.67083e+06 us
+Time Taken: 1670.83 ms
+Time Taken: 1.67083 s
+Sent Data (B): 30407712
+Sent Data (KB): 29695
+Sent Data (MB): 28
+-------------- finish test -----------------
+connected
+
+------------ Exp_exact zero-knowledge proof test ------------
+
+----------setup_zk_bool Finish ------------
+----------setup_zk_arith Finish ------------
+---------- LnCheck running ------------
+All Ln checks finished! 
+party: 1
+Time Taken: 1.71665e+06 us
+Time Taken: 1716.65 ms
+Time Taken: 1.71665 s
+Sent Data (B): 30407712
+Sent Data (KB): 29695
+Sent Data (MB): 28
+-------------- finish test -----------------

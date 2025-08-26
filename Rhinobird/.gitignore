@@ -57,3 +57,6 @@ log_*/
 # Backup files
 emp-zk.backup/
 *.backup
+
+# scripts
+run_*.sh

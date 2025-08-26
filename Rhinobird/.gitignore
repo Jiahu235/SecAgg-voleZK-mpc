@@ -60,3 +60,5 @@ emp-zk.backup/
 
 # scripts
 run_*.sh
+
+**/.vscode/

@@ -53,3 +53,7 @@ data/
 # Log files
 log/
 log_*/
+
+# Backup files
+emp-zk.backup/
+*.backup

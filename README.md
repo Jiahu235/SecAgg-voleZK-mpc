@@ -9,8 +9,10 @@ This repo contains implementation of our scheme "Rhinobird: Efficient Integrity 
    sudo apt-get update -y
    sudo apt-get install -y libeigen3-dev
    ```
-3. Install SEAL 3.64 
+3. Install SEAL 3.64:
+
    a. Clone \[[SEAL](https://github.com/microsoft/SEAL.git)\] repo in the parent directory `SecAgg-voleZK-mpc`.
+   
    b. Execute 
    ```
    cd SEAL
@@ -25,11 +27,11 @@ This repo contains implementation of our scheme "Rhinobird: Efficient Integrity 
 1. In `SecAgg-voleZK-mpc`, go to `emp-tool` and do `git checkout df363bf30b56c48a12c352845efa3a4d8f75b388`.
 2. Next, go to `emp-ot` in `SecAgg-voleZK-mpc` and do `git checkout 3b21d6314cb1e7d8dbb9bb1f1ed80261738e4f4c`.
 3. For multi-threading support, go to `emp-tool` and run the following:
-```
-cmake . -DTHREADING=ON
-make -j
-sudo make install
-```
+   ```
+   cmake . -DTHREADING=ON
+   make -j
+   sudo make install
+   ```
 4. Do the same for emp-ot repository.
 5. Finally, do the same in `Rhinobird` repository.
 

@@ -41,35 +41,23 @@ Run the following test files from path `SecAgg-voleZK-mpc/Rhinobird`:
 Examples:
 
 ```
-fl_normball.cpp:
-Terminal 1: bin/test_fl_normball 1 0.0.0.0 31000 1
-Terminal 2: bin/test_fl_normball 2 127.0.0.1 31000 1
+EucSim:
 Terminal 1: bin/test_fl_normball 1 0.0.0.0 31000 1 2048 100
 Terminal 2: bin/test_fl_normball 2 127.0.0.1 31000 1 2048 100
 
-fl_cossim.cpp:
+CosSim:
 Terminal 1: bin/test_fl_cossim 1 0.0.0.0 31000 1 1000 0
 Terminal 2: bin/test_fl_cossim 2 127.0.0.1 31000 1 1000 0
-Terminal 1: bin/test_fl_normball 1 0.0.0.0 31000 1
-Terminal 2: bin/test_fl_normball 2 127.0.0.1 31000 1
 
-fl_l2check.cpp:
+L2check:
 Terminal 1: bin/test_fl_l2check 1 0.0.0.0 31000 10 20 5
 Terminal 2: bin/test_fl_l2check 2 127.0.0.1 31000 10 20 5
-Terminal 1: bin/test_fl_l2check 1 0.0.0.0 31000 10 20 17
-Terminal 2: bin/test_fl_l2check 2 127.0.0.1 31000 10 20 17
 
-fl_lncheck.cpp:
-Terminal 1: bin/test_fl_lncheck 1 0.0.0.0 31000 10 20
-Terminal 2: bin/test_fl_lncheck 2 127.0.0.1 31000 10 20
+Lncheck:
 Terminal 1: bin/test_fl_lncheck 1 0.0.0.0 31000 1000 1024
 Terminal 2: bin/test_fl_lncheck 2 127.0.0.1 31000 1000 1024
 
-fl_aggregation.cpp:
-Terminal 1: bin/test_fl_aggregation 1 0.0.0.0 31000 1 10 10
-Terminal 2: bin/test_fl_aggregation 2 127.0.0.1 31000 1 10 10
-Terminal 1: bin/test_fl_aggregation 1 0.0.0.0 31000 0 10000 5
-Terminal 2: bin/test_fl_aggregation 2 127.0.0.1 31000 0 10000 5
+Aggregation:
 Terminal 1: bin/test_fl_aggregation 1 0.0.0.0 31000 1 1000000 1000
 Terminal 2: bin/test_fl_aggregation 2 127.0.0.1 31000 1 1000000 1000
 ```

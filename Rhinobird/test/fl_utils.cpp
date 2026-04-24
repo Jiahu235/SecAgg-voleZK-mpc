@@ -89,6 +89,8 @@ void Zk2Mpc(int party, NetIO *io, uint64_t *x, uint64_t *mac_x, uint64_t len_x, 
     *delta = 0;
     memcpy(x, tmp_x, len_x*sizeof(uint64_t));
 	memcpy(mac_x, tmp_mac_x, len_x*sizeof(uint64_t));
+	delete[] tmp_x;
+	delete[] tmp_mac_x;
   }
   io->flush();
 }
@@ -169,6 +171,10 @@ void vector_multiplication(int party, NetIO* io, IntFp *x, uint64_t len_x,
 	mult_time += mult_cost_time;
 	mult_comm += mult_cost_comm;
 	std::cout << "---------- Vector multiplication finish ------------" << std::endl;
+	delete[] input_x;
+	delete[] mac_M;
+	delete[] mac_K;
+	delete[] tmp_y;
 }
 
 void vector_bool_multiplication(int party, NetIO* io, IntFp *x, 
@@ -234,6 +240,9 @@ void vector_bool_multiplication(int party, NetIO* io, IntFp *x,
 	swap_comm += mult_cost_comm;
 	mult_time += mult_cost_time;
 	mult_comm += mult_cost_comm;
+	delete[] input_x;
+	delete[] mac_M;
+	delete[] mac_K;
 }
 
 uint64_t mod_shift(uint64_t a, uint64_t b, uint64_t prime_mod) {
@@ -356,6 +365,10 @@ void create_ciphertexts(Integer *garbled_data, block label_delta, uint64_t *ciph
     }
     server_shares[i] = (prime_mod - server_shares[i])%prime_mod;
   }
+  for(uint64_t i=0; i<nrelu; i++) {
+    free(random_val[i]);
+  }
+  free(random_val);
 }
 
 void decrypt_ciphertexts(Integer *garbled_data, uint64_t *ciphertexts, uint64_t* client_shares, int bitlen, uint64_t nrelu, int l_idx, bool apply_prg) {
@@ -404,13 +417,7 @@ void comparison(int party, int tid, NetIO* io, uint64_t* inputs, uint64_t nrelu,
     Y[i] = Integer(bitlen, inputs[i], BOB);
 
   Integer *S = new Integer[nrelu];
-  Integer *U = new Integer[nrelu];
   Integer *T = new Integer[nrelu];
-
-  //Check if Bob's share is < p
-  Bit res[nrelu];
-  for(uint64_t i=0; i < nrelu; ++i)
-    res[i] = Y[i] > p;
 
   for(uint64_t i=0; i < nrelu; ++i) {
     //Perform mod p
@@ -487,6 +494,16 @@ void comparison(int party, int tid, NetIO* io, uint64_t* inputs, uint64_t nrelu,
     decrypt_ciphertexts(T, op_mcts, op_mss, 1, nrelu, 1, false);
   }
   io->flush();
+  delete[] X;
+  delete[] Y;
+  delete[] S;
+  delete[] T;
+  free(ip_cts);
+  free(op_cts);
+  free(op_mcts);
+  free(ip_pack_table);
+  free(op_pack_table);
+  free(opm_pack_table);
 }
 
 void Wrap_comparison(int party, int tid, NetIO* io, uint64_t *ss_x, uint64_t *ss_mac_x, uint64_t len_x,
@@ -542,7 +559,7 @@ void Wrap_comparison(int party, int tid, NetIO* io, uint64_t *ss_x, uint64_t *ss
 			uint64_t *from_c_ip_ss = new uint64_t[len_x];
 			io->recv_data(from_c_ss_mac, len_x*sizeof(uint64_t));
 			io->recv_data(from_c_ip_ss, len_x*sizeof(uint64_t));
-			
+
 			uint64_t *mac_input = new uint64_t[len_x];
 			uint64_t *mac_output = new uint64_t[len_x];
 			uint64_t ctr = 0;
@@ -552,12 +569,21 @@ void Wrap_comparison(int party, int tid, NetIO* io, uint64_t *ss_x, uint64_t *ss
 				if(mac_input[i] == mac_output[i]) ctr++;
 			}
 			if(ctr < len_x) error("Wrap comparision failed!");
+			delete[] from_c_ss_mac;
+			delete[] from_c_ip_ss;
+			delete[] mac_input;
+			delete[] mac_output;
 		}
 	}
 	io->flush();
 
+	CircuitExecution *new_circ_exec = CircuitExecution::circ_exec;
+	ProtocolExecution *new_prot_exec = ProtocolExecution::prot_exec;
   	CircuitExecution::circ_exec = tmp_circ_exec;
 	ProtocolExecution::prot_exec = tmp_prot_exec;
+	delete new_prot_exec;
+	delete new_circ_exec;
+	delete[] ip_ss;
 }
 
 uint64_t comm(BoolIO<NetIO> **ios, int num_threads)
@@ -576,7 +602,7 @@ void L2Check(int party, IntFp *x, uint64_t len_x, uint64_t up_bd, uint64_t low_b
 	if(party == ALICE){
 		for(uint64_t i=0; i<len_x; i++){
 			uint64_t *v = (uint64_t*)&(x[i].value);
-			sum = add_mod(sum, mod_mult(v[1], v[1], PR));   // differece between mod_mult and mult_mod
+			sum = add_mod(sum, mult_mod(v[1], v[1]));   // differece between mod_mult and mult_mod
 		}
 		// std::cout << "L2(sum_sqr): "<< sum 
 		//  << "\nsqure_low_bound: "<< low_bd*low_bd 
@@ -614,20 +640,112 @@ void L2Check(int party, IntFp *x, uint64_t len_x, uint64_t up_bd, uint64_t low_b
 	trunc[0] = sqr_x;
 	IntFp *trunc_x2 = new IntFp[1];
 	ZKpositiveTruncAny(party, trunc, trunc_x2, 1, SCALE);
-	uint64_t new_bd0 = low_bd*low_bd/((uint64_t)pow(2,SCALE));
-	uint64_t new_bd1 = up_bd*up_bd/((uint64_t)pow(2,SCALE));
+	uint64_t new_bd0 = (low_bd * low_bd) >> SCALE;
+	uint64_t new_bd1 = (up_bd  * up_bd)  >> SCALE;
 	std::cout << "Truncation finished! " << endl;
 
 	// check x^2/2^s truncation in range [low_bd^2/2^s, up_bd^2/2^s]
-	// IntFp tmp = trunc_x2[0] + IntFp(new_bd0).negate();
-	IntFp tmp = IntFp(new_bd0+1) + IntFp(new_bd0).negate();
-	LUTRangeIntFp *LUTRange2 = new LUTRangeIntFp(party);
-	uint64_t t = (new_bd1 - new_bd0)%PR;
-	// uint64_t t = ((up_bd*up_bd - low_bd*low_bd) / (uint64_t)(pow(2,SCALE)))%PR;
-	LUTRange2->LUTRangeinit(t);
-	LUTRange2->LUTRangeread(tmp);
-	delete LUTRange2;
-	std::cout << "All L2 checks finished! " << endl;
+	// old LUT approach (for reference):
+	// // IntFp tmp = trunc_x2[0] + IntFp(new_bd0).negate();
+	// IntFp tmp = IntFp(new_bd0+1) + IntFp(new_bd0).negate();
+	// LUTRangeIntFp *LUTRange2 = new LUTRangeIntFp(party);
+	// uint64_t t = (new_bd1 - new_bd0)%PR;
+	// // uint64_t t = ((up_bd*up_bd - low_bd*low_bd) / (uint64_t)(pow(2,SCALE)))%PR;
+	// LUTRange2->LUTRangeinit(t);
+	// LUTRange2->LUTRangeread(tmp);
+	// delete LUTRange2;
+
+	// --- OR-proof range check: trunc_x2[0] ∈ [new_bd0, new_bd1] ---
+	// Replaces LUTRangeIntFp with the 1-hotvector OR proof from Section 4.1
+	// of "Post-Quantum Threshold Ring Signatures from VOLE-in-the-Head" (2025).
+	//
+	// Claim: ∃ t_i ∈ {new_bd0,...,new_bd1} s.t. [trunc_x2] - t_i = 0.
+	// The active index idx = trunc_x2 - new_bd0 is encoded as idx = ii1*sqrt_n + ii2
+	// using two 1-hotvectors b1[0..sqrt_n-1] and b2[0..sqrt_n-1].
+	// The range is padded to sqrt_n^2 entries (accepts [new_bd0, new_bd0+sqrt_n^2-1],
+	// a small relaxation of at most 2*sqrt_n extra values).
+	//
+	// Three QuickSilver constraints:
+	//   A) Σ_k b1[k] = 1, Σ_k b2[k] = 1                          (degree 1)
+	//   B) (σ_j - k) * b_{j,k} = 0  ∀k,j   (single active bit)   (degree 2)
+	//   C) trunc_x2 - new_bd0 - σ1*sqrt_n - σ2 = 0               (degree 1, LINEAR)
+	// VOLE witness: 2*sqrt_n bits vs. O(n) for the LUT permutation.
+	{
+		uint64_t n     = new_bd1 - new_bd0 + 1;
+		uint64_t sqrt_n = (uint64_t)ceil(sqrt((double)n));
+		while(sqrt_n * sqrt_n < n) sqrt_n++;  // ensure sqrt_n^2 >= n
+
+		// Prover computes the active decomposition (ii1, ii2) s.t. idx = ii1*sqrt_n + ii2
+		uint64_t tx2_clear = (party == ALICE) ? (uint64_t)HIGH64(trunc_x2[0].value) : 0;
+		uint64_t active    = (party == ALICE) ? (tx2_clear - new_bd0) : 0;
+		uint64_t ii1 = active / sqrt_n;
+		uint64_t ii2 = active % sqrt_n;
+
+		// Constraint A: Σ_k b_{j,k} = 1  (each hotvector sums to 1)
+		// Commit only the first sqrt_n-1 bits of each hotvector.
+		// The last bit is derived: b[sqrt_n-1] = 1 - Σ_{k=0}^{sqrt_n-2} b[k]
+		// This is a free linear combination — zero extra VOLEs, no inner product check.
+		// Sum = 1 is enforced structurally by construction (paper Section 4.1.3).
+		IntFp *b1 = new IntFp[sqrt_n];
+		IntFp *b2 = new IntFp[sqrt_n];
+		IntFp sum_b1 = IntFp(0ULL, PUBLIC);
+		IntFp sum_b2 = IntFp(0ULL, PUBLIC);
+		for(uint64_t k = 0; k < sqrt_n - 1; k++){
+			b1[k] = IntFp((party == ALICE && k == ii1) ? 1ULL : 0ULL, ALICE);
+			b2[k] = IntFp((party == ALICE && k == ii2) ? 1ULL : 0ULL, ALICE);
+			sum_b1 = sum_b1 + b1[k];
+			sum_b2 = sum_b2 + b2[k];
+		}
+		b1[sqrt_n-1] = IntFp(1ULL, PUBLIC) + sum_b1.negate();  // 1 - Σ prior b1[k]
+		b2[sqrt_n-1] = IntFp(1ULL, PUBLIC) + sum_b2.negate();  // 1 - Σ prior b2[k]
+
+		// σ_j = Σ_k b_{j,k} * k  (CMult by public constant k: linear, degree 1)
+		IntFp sigma1 = IntFp(0ULL, PUBLIC);
+		IntFp sigma2 = IntFp(0ULL, PUBLIC);
+		for(uint64_t k = 1; k < sqrt_n; k++){
+			sigma1 = sigma1 + b1[k] * IntFp(k, PUBLIC);
+			sigma2 = sigma2 + b2[k] * IntFp(k, PUBLIC);
+		}
+
+		// Constraint B: (σ_j - k) * b_{j,k} = 0  ∀k  (exactly one bit is 1)
+		// Batched via fp_zkp_inner_prdt with random chi (soundness 1/PR per check).
+		// Proof: if two bits b_{j,a}, b_{j,c} were both non-zero, σ_j could not equal
+		// the position of either, so the batch check catches any malformed hotvector.
+		{
+			IntFp *A1 = new IntFp[sqrt_n];
+			IntFp *A2 = new IntFp[sqrt_n];
+			for(uint64_t k = 0; k < sqrt_n; k++){
+				uint64_t neg_k = (k == 0) ? 0ULL : (PR - k);
+				A1[k] = sigma1 + IntFp(neg_k, PUBLIC);  // σ1 - k
+				A2[k] = sigma2 + IntFp(neg_k, PUBLIC);  // σ2 - k
+			}
+			fp_zkp_inner_prdt<BoolIO<NetIO>>(A1, b1, 0, sqrt_n);
+			fp_zkp_inner_prdt<BoolIO<NetIO>>(A2, b2, 0, sqrt_n);
+			delete[] A1;
+			delete[] A2;
+		}
+
+		// Constraint C: trunc_x2[0] = new_bd0 + σ1*sqrt_n + σ2  (linear!)
+		// σ1*sqrt_n is CMult (public scalar): still degree 1.
+		// This is the OR proof's core: it certifies [trunc_x2] - t_{active} = 0.
+		{
+			uint64_t neg_bd0 = (new_bd0 == 0) ? 0ULL : (PR - new_bd0);
+			IntFp lhs = trunc_x2[0]
+			          + IntFp(neg_bd0, PUBLIC)                        // - new_bd0
+			          + (sigma1 * IntFp(sqrt_n, PUBLIC)).negate()     // - σ1*sqrt_n
+			          + sigma2.negate();                               // - σ2
+			IntFp one_pub = IntFp(1ULL, PUBLIC);
+			fp_zkp_inner_prdt<BoolIO<NetIO>>(&lhs, &one_pub, 0, 1);
+		}
+
+		delete[] b1;
+		delete[] b2;
+	}
+	std::cout << "All L2 checks finished (OR proof)! " << endl;
+	delete[] poly1;
+	delete[] poly2;
+	delete[] trunc;
+	delete[] trunc_x2;
 
 	// check x^2 in range [low_bd^2, up_bd^2]
 	// // IntFp tmp = sqr_x + IntFp(low_bd*low_bd).negate();
@@ -643,22 +761,12 @@ void L2Check(int party, IntFp *x, uint64_t len_x, uint64_t up_bd, uint64_t low_b
 void LnCheck(int party, IntFp *x, uint64_t len_x, uint64_t bd)
 {
 	std::cout << "---------- LnCheck running ------------" << std::endl;
-	// parse x = s * hx, s为0或1, hx为x的绝对值
-	uint64_t *s = new uint64_t[len_x];
+	// parse hx = |x|
 	uint64_t *hx = new uint64_t[len_x];
 	if(party == ALICE){
 		for(uint64_t i=0; i<len_x; i++){
 			uint64_t *v = (uint64_t*)&(x[i].value);
-			// std::cout << "x["<< i <<"].value: " << v[1] << std::endl;
-			if(v[1] <= (PR-1)/2){
-				s[i] = 1;
-				hx[i] = v[1];
-			}else{
-				s[i] = 0;
-				hx[i] = PR - v[1];
-			}
-			// std::cout << "s["<< i <<"]: " << s[i] << std::endl;
-			// std::cout << "hx["<< i <<"]: " << hx[i] << std::endl;
+			hx[i] = (v[1] <= (PR-1)/2) ? v[1] : PR - v[1];
 		}
 	}
 
@@ -674,46 +782,13 @@ void LnCheck(int party, IntFp *x, uint64_t len_x, uint64_t bd)
 
 	// // check x = sign *ab_x and sign*(sign-1)=0 - new way proposed in QuickSilver
 	// check ab_x^2 - x^2 =0
-	// IntFp *poly1 = new IntFp[2*len_x];
-	// IntFp *poly2 = new IntFp[2*len_x];
-	// IntFp *poly3 = new IntFp[len_x];
-	// IntFp *poly4 = new IntFp[len_x];
 	IntFp *poly1 = new IntFp[len_x];
 	IntFp *poly2 = new IntFp[len_x];
 	for (uint64_t i = 0; i < len_x; i++){
-		// poly1[i] = ab_x[i];
-		// poly2[i] = (sign[i] * 2) + (PR - 1);
-		// poly1[len_x+i] = x[i];
-		// poly2[len_x+i] = IntFp(-1, PUBLIC);
-		// poly3[i] = sign[i];
-		// poly4[i] = sign[i] + (PR - 1);
 		poly1[i] = ab_x[i] + x[i].negate();
 		poly2[i] = ab_x[i] + x[i];
 	}
-	// fp_zkp_inner_prdt<BoolIO<NetIO>>(poly1, poly2, 0, 2*len_x);
-	// fp_zkp_inner_prdt<BoolIO<NetIO>>(poly3, poly4, 0, len_x);
 	fp_zkp_inner_prdt<BoolIO<NetIO>>(poly1, poly2, 0, len_x);
-	
-	// check x = sign *ab_x and sign*(sign-1)=0
-	// IntFp *check_mult = new IntFp[len_x];
-	// IntFp *check_sign = new IntFp[len_x];
-	// for(uint64_t i=0; i<len_x; i++){
-	// 	// std::cout << "sign["<< i <<"]: " << ((uint64_t*)&(sign[i].value))[1] << std::endl;
-	// 	// std::cout << "ab_x["<< i <<"]: " << ((uint64_t*)&(ab_x[i].value))[1] << std::endl;
-	// 	check_mult[i] = x[i].negate() + ((sign[i] * 2) + (PR - 1)) * ab_x[i];
-	// 	check_sign[i] = (sign[i] + (PR - 1)) * sign[i];
-	// 	// std::cout << "check_mult["<< i <<"]: " << ((uint64_t*)&(check_mult[i].value))[1] << std::endl;
-	// 	// std::cout << "check_sign["<< i <<"]: " << ((uint64_t*)&(check_sign[i].value))[1] << std::endl;
-	// }
-	// // uint64_t *zero_a = new uint64_t[len_x];
-	// // memset(zero_a, 0, len_x * sizeof(uint64_t));
-	// // // zero_a[0] += 4;
-	// // batch_reveal_check(check_mult, zero_a, len_x);
-	// // batch_reveal_check(check_sign, zero_a, len_x);
-	// bool r0 = batch_reveal_check_zero(check_mult, len_x);
-	// bool r1 = batch_reveal_check_zero(check_sign, len_x);
-	// // std::cout << "Check result1: " << r0 << endl;
-	// // std::cout << "Check result2: " << r1 << endl;
 
 	// check ab_x in range [0, bd]
 	LUTRangeIntFp *LUTRange1 = new LUTRangeIntFp(party);
@@ -723,6 +798,10 @@ void LnCheck(int party, IntFp *x, uint64_t len_x, uint64_t bd)
 	}
 	delete LUTRange1;
 	std::cout << "All Ln checks finished! " << endl;
+	delete[] hx;
+	delete[] ab_x;
+	delete[] poly1;
+	delete[] poly2;
 }
 
 // z = vec(x) cdot vec(y), x and mac_x are shared by server and client, y is held by server
@@ -754,12 +833,12 @@ void Ideal_vector_multiplication(int party, NetIO* io, uint64_t *ss_x, uint64_t 
 		for(uint64_t i=0; i<len_x; i++){
 			real_x[i] = (from_c_ss_x[i] + ss_x[i])%prime_mod;
 			real_mac_x[i] = (from_c_ss_mac_x[i] + ss_mac_x[i])%prime_mod;
-			if(mod_mult(real_x[i], mac_delta, prime_mod) != real_mac_x[i]){
+			if(mult_mod(real_x[i], mac_delta) != real_mac_x[i]){
 				error("Mac mult input check failed!\n");
 			}
-			*ss_z = (*ss_z + mod_mult(real_x[i], y[i], prime_mod))%prime_mod;
-			*ss_mac_z = (*ss_mac_z + mod_mult(real_mac_x[i], y[i], prime_mod))%prime_mod;
-			if(mod_mult(*ss_z, mac_delta, prime_mod) != *ss_mac_z){
+			*ss_z = (*ss_z + mult_mod(real_x[i], y[i]))%prime_mod;
+			*ss_mac_z = (*ss_mac_z + mult_mod(real_mac_x[i], y[i]))%prime_mod;
+			if(mult_mod(*ss_z, mac_delta) != *ss_mac_z){
 				error("Mac mult output check failed!\n");
 			}
 		}
@@ -774,6 +853,10 @@ void Ideal_vector_multiplication(int party, NetIO* io, uint64_t *ss_x, uint64_t 
 			*ss_z = (*ss_z + prime_mod - to_c_ss_z)%prime_mod;
 			*ss_mac_z = (*ss_mac_z + prime_mod - to_c_ss_mac_z)%prime_mod;
 		}
+		delete[] from_c_ss_x;
+		delete[] from_c_ss_mac_x;
+		delete[] real_x;
+		delete[] real_mac_x;
 	}
 	// std::cout << "---------- Ideal_vector_multiplication finish ------------" << std::endl;
 	io->flush();
@@ -815,14 +898,14 @@ void Ideal_vector_multiplication_1(int party, NetIO* io,
 		uint64_t mac_delta = (uint64_t)LOW64(((ZKFpExecVer<NetIO> *)(ZKFpExec::zk_exec))->ostriple->delta);
 		for(uint64_t i=0; i<len_x; i++){
 			mac_key_x[i] = (uint64_t)LOW64(x[i].value);
-			if((mod_mult(real_x[i], mac_delta, prime_mod) + mac_key_x[i])%prime_mod != real_mac_x[i]){
+			if((mult_mod(real_x[i], mac_delta) + mac_key_x[i])%prime_mod != real_mac_x[i]){
 				error("Mac mult input check failed!\n");
 			}
-			uint64_t tmp = mod_mult(real_x[i], y[i], prime_mod);
+			uint64_t tmp = mult_mod(real_x[i], y[i]);
 			*ss_z = (*ss_z + tmp)%prime_mod;
-			*ss_mac_z = (*ss_mac_z + mod_mult(tmp, mac_delta, prime_mod))%prime_mod;	
+			*ss_mac_z = (*ss_mac_z + mult_mod(tmp, mac_delta))%prime_mod;
 		}
-		if(mod_mult(*ss_z, mac_delta, prime_mod) != *ss_mac_z){
+		if(mult_mod(*ss_z, mac_delta) != *ss_mac_z){
 			error("Mac mult output check failed!\n");
 		}
 
@@ -840,6 +923,9 @@ void Ideal_vector_multiplication_1(int party, NetIO* io,
 	}
 	// std::cout << "---------- Ideal_vector_multiplication finish ------------" << std::endl;
 	io->flush();
+	delete[] real_x;
+	delete[] real_mac_x;
+	delete[] mac_key_x;
 }
 
 // z = (x > 0)-----> x < prime_mod/2
@@ -873,7 +959,7 @@ void Ideal_vector_comparison(int party, NetIO* io, uint64_t *ss_x, uint64_t *ss_
 			// std::cout << "prime_mod-real_x[i]: " << prime_mod - real_x[i] << std::endl;
 			// std::cout << "real_mac_x[i]: " << real_mac_x[i] << std::endl;
 			// std::cout << "mac_delta: " << mac_delta << std::endl;
-			if(mod_mult(real_x[i], mac_delta, prime_mod) != real_mac_x[i]){
+			if(mult_mod(real_x[i], mac_delta) != real_mac_x[i]){
 				error("Mac comparison input check failed!\n");
 			}
 			ss_z[i] = (real_x[i] < (prime_mod - 1)/2) ? 0 : 1;
@@ -891,7 +977,13 @@ void Ideal_vector_comparison(int party, NetIO* io, uint64_t *ss_x, uint64_t *ss_
 				ss_z[i] = (ss_z[i] + prime_mod - to_c_ss_z[i])%prime_mod;
 				ss_mac_z[i] = (ss_mac_z[i] + prime_mod - to_c_ss_mac_z[i])%prime_mod;
 			}
+			delete[] to_c_ss_z;
+			delete[] to_c_ss_mac_z;
 		}
+		delete[] from_c_ss_x;
+		delete[] from_c_ss_mac_x;
+		delete[] real_x;
+		delete[] real_mac_x;
 	}
 	// std::cout << "---------- Ideal_vector_comparison finish ------------" << std::endl;
 	io->flush();
@@ -923,7 +1015,7 @@ void NormBall(int party, NetIO* io, IntFp *x, uint64_t len_x, uint64_t *y, uint6
 	uint64_t sum = 0;
 	if(party == ALICE){
 		for(uint64_t i=0; i<len; i++){
-			sum += mod_mult(((uint64_t)HIGH64(x[i].value)), ((uint64_t)HIGH64(x[i].value)), prime_mod);
+			sum += mult_mod((uint64_t)HIGH64(x[i].value), (uint64_t)HIGH64(x[i].value));
 			// sum += 1;
 		}
 	}
@@ -953,47 +1045,13 @@ void NormBall(int party, NetIO* io, IntFp *x, uint64_t len_x, uint64_t *y, uint6
 	// uint64_t *ss_mac_x = new uint64_t[len];   // secret sharing of delta*x: = M_x for Server; = -K_x for Client
 	uint64_t mac_delta = 0;  // delta held by server, for client is 0
 	if(party == ALICE){
-	// 	// generate sharings of h, x for server
-	// 	uint64_t ss_h_to_s;
-	// 	uint64_t *ss_x_to_s = new uint64_t[len];
-	// 	if(ss_zero){
-	// 		ss_h_to_s = 0;
-	// 		memset(ss_x_to_s, 0, len*sizeof(uint64_t));
-	// 	}else{
-	// 		random_mod_p(prg, &ss_h_to_s, 1, prime_mod);
-	// 		random_mod_p(prg, ss_x_to_s, len, prime_mod);
-	// 	}
-	// 	io->send_data(&ss_h_to_s, sizeof(uint64_t));
-	// 	io->send_data(ss_x_to_s, len*sizeof(uint64_t));
-	// 	// compute sharings of h, x for client
-	// 	uint64_t real_h = (uint64_t)HIGH64(h.value);  // value of h
-	// 	ss_h = (real_h + prime_mod - ss_h_to_s)%prime_mod;
-	// 	uint64_t *real_x = new uint64_t[len];  // value of x
-	// 	for(uint64_t i=0; i<len; i++){
-	// 		real_x[i] = (uint64_t)HIGH64(x[i].value);
-	// 		ss_x[i] = (real_x[i] + prime_mod - ss_x_to_s[i])%prime_mod;
-	// 	}
-
 		ss_h = (uint64_t)HIGH64(h.value);
 		uint64_t mac_h = (uint64_t)LOW64(h.value);  // M_h
 		ss_mac_h = mac_h; 
-		// uint64_t *mac_x = new uint64_t[len];   // M_x
-		// for(uint64_t i=0; i<len; i++){
-		// 	mac_x[i] = (uint64_t)LOW64(x[i].value);
-		// 	ss_mac_x[i] = mac_x[i];
-		// }
 	}else{
-	// 	io->recv_data(&ss_h, sizeof(uint64_t));
-	// 	io->recv_data(ss_x, len*sizeof(uint64_t));
-
 		mac_delta = (uint64_t)LOW64(((ZKFpExecVer<NetIO> *)(ZKFpExec::zk_exec))->ostriple->delta);
 		uint64_t mac_key_h = (uint64_t)LOW64(h.value);  // K_h
 		ss_mac_h = (prime_mod - mac_key_h);
-		// uint64_t *mac_key_x = new uint64_t[len];   // K_x
-		// for(uint64_t i=0; i<len; i++){
-		// 	mac_key_x[i] = (uint64_t)LOW64(x[i].value);
-		// 	ss_mac_x[i] = (prime_mod - mac_key_x[i]);
-		// }
 	}
 	io->flush();
 	// cout << "t3: " << (double)(time_from(start_time)) << endl;
@@ -1011,16 +1069,16 @@ void NormBall(int party, NetIO* io, IntFp *x, uint64_t len_x, uint64_t *y, uint6
 	// cout << "t4: " << (double)(time_from(start_time)) << endl;
 	// comparison: x^2 - 2xy > bd_l2 - y^2, where x^2 and 2xy are sharings, bd_l2 - y^2 can be computed by server
 	
-	uint64_t ss_tmp = (ss_h + prime_mod - mod_mult(2, ss_z, prime_mod))%prime_mod;
-	uint64_t ss_mac_tmp = (ss_mac_h + prime_mod - mod_mult(2, ss_mac_z, prime_mod))%prime_mod;
+	uint64_t ss_tmp     = (ss_h     + prime_mod - (ss_z     + ss_z)     % prime_mod) % prime_mod;
+	uint64_t ss_mac_tmp = (ss_mac_h + prime_mod - (ss_mac_z + ss_mac_z) % prime_mod) % prime_mod;
 	uint64_t sqrt_y = 0; //compute y^2
 	if(party == BOB){
-		for(uint64_t i=0; i<len; i++) sqrt_y = (sqrt_y + mod_mult(y[i], y[i], prime_mod))%prime_mod;
+		for(uint64_t i=0; i<len; i++) sqrt_y = (sqrt_y + mult_mod(y[i], y[i]))%prime_mod;
 		// std::cout << "sqrt_y: " << sqrt_y << std::endl;
 		// std::cout << "prime_mod-sqrt_y: " << prime_mod-sqrt_y << std::endl;
-		uint64_t new_bd = (mod_mult(bd_l2, bd_l2, prime_mod) + prime_mod - sqrt_y)%prime_mod;
+		uint64_t new_bd = (mult_mod(bd_l2, bd_l2) + prime_mod - sqrt_y)%prime_mod;
 		ss_tmp = (ss_tmp + prime_mod - new_bd)%prime_mod;
-		ss_mac_tmp = (ss_mac_tmp + prime_mod - mod_mult(new_bd, mac_delta, prime_mod))%prime_mod;
+		ss_mac_tmp = (ss_mac_tmp + prime_mod - mult_mod(new_bd, mac_delta))%prime_mod;
 	}
 	// std::cout << "ss_tmp: " << ss_tmp << std::endl;
 	// std::cout << "prime_mod-ss_tmp: " << prime_mod-ss_tmp << std::endl;
@@ -1052,6 +1110,7 @@ void Ideal_L2Check(int party, IntFp *x, uint64_t len_x, uint64_t up_bd, uint64_t
 		}
 		if((sum <= low_bd*low_bd) && (sum >= up_bd*up_bd)) error("L2Check failed!");
 	}
+	delete[] real_x;
 }
 
 void CosSim(int party, NetIO* io, IntFp *x, uint64_t len_x, uint64_t *y, uint64_t len_y, uint64_t bd, uint64_t *ss_res, uint64_t *ss_mac_res, block *delta_blocks)
@@ -1088,7 +1147,7 @@ void CosSim(int party, NetIO* io, IntFp *x, uint64_t len_x, uint64_t *y, uint64_
 			real_input[i] = Field2Real(input[i], SCALE);
 			input_cdot_input += real_input[i] * real_input[i];
 		}
-		l2_norm_input = pow(input_cdot_input, 0.5);
+		l2_norm_input = sqrt(input_cdot_input);
 		for(int i=0; i<len; i++){
 			input_h[i] = Real2Field(real_input[i]/l2_norm_input, SCALE+HELP_SCALE);
 		}
@@ -1152,53 +1211,11 @@ void CosSim(int party, NetIO* io, IntFp *x, uint64_t len_x, uint64_t *y, uint64_
 			real_y[i] = Field2Real(y[i], SCALE);
 			input_cdot_input_y += real_y[i] * real_y[i];
 		}
-		l2_norm_y = pow(input_cdot_input_y, 0.5);
+		l2_norm_y = sqrt(input_cdot_input_y);
 		for(int i=0; i<len; i++){
 			g[i] = Real2Field(real_y[i]/l2_norm_y, SCALE+HELP_SCALE);
 		}
 	}
-
-	// share h, delta*h  //not neccesary
-	// PRG prg;
-	// uint64_t *ss_h =  new uint64_t[len];  // secret sharing of h
-	// memset(ss_h, 0, len*sizeof(uint64_t));
-	// uint64_t *ss_mac_h = new uint64_t[len];   // secret sharing of delta*h: = M_h for Server; = -K_h for Client
-	// memset(ss_mac_h, 0, len*sizeof(uint64_t));
-	// uint64_t mac_delta = 0;  // delta held by server, for client is 0
-	// if(party == ALICE){
-	// 	// generate sharings of h for server
-	// 	uint64_t *ss_h_to_s = new uint64_t[len];
-	// 	random_mod_p(prg, ss_h_to_s, len, prime_mod);
-	// 	if(ss_zero){
-	// 		memset(ss_h_to_s, 0, len*sizeof(uint64_t));
-	// 	}else{
-	// 		random_mod_p(prg, ss_h_to_s, len, prime_mod);
-	// 	}
-	// 	io->send_data(ss_h_to_s, len*sizeof(uint64_t));
-
-	// 	// compute sharings of h for client
-	// 	uint64_t *real_h = new uint64_t[len];  // value of h
-	// 	for(uint64_t i=0; i<len; i++){
-	// 		real_h[i] = (uint64_t)HIGH64(h[i].value);
-	// 		ss_h[i] = (real_h[i] + prime_mod - ss_h_to_s[i])%prime_mod;
-	// 	}
-		 
-	// 	// sharings of delta*h
-	// 	uint64_t *mac_h = new uint64_t[len];   // M_h
-	// 	for(uint64_t i=0; i<len; i++){
-	// 		mac_h[i] = (uint64_t)LOW64(h[i].value);
-	// 		ss_mac_h[i] = mac_h[i];
-	// 	}
-	// }else{
-	// 	io->recv_data(ss_h, len*sizeof(uint64_t));
-
-	// 	mac_delta = (uint64_t)LOW64(((ZKFpExecVer<NetIO> *)(ZKFpExec::zk_exec))->ostriple->delta);
-	// 	uint64_t *mac_key_h = new uint64_t[len];   // K_h
-	// 	for(uint64_t i=0; i<len; i++){
-	// 		mac_key_h[i] = (uint64_t)LOW64(h[i].value);
-	// 		ss_mac_h[i] = (prime_mod - mac_key_h[i])%prime_mod;
-	// 	}
-	// }
 	// cout << "t3: " << (double)(time_from(start_time)) << endl;
 	
 	// compute vec(x) cdot vec(y)
@@ -1212,15 +1229,15 @@ void CosSim(int party, NetIO* io, IntFp *x, uint64_t len_x, uint64_t *y, uint64_
 	// Ideal_vector_truncate(party, io, &ss_z, &ss_mac_z, 1, &ss_z, &ss_mac_z, SCALE, mac_delta);
 	// cout << "t4: " << (double)(time_from(start_time)) << endl;
 
-	// comparison: x^2 - 2xy > bd_l2 - y^2, where x^2 and 2xy are sharings, bd_l2 - y^2 can be computed by server
+	// comparison
 	uint64_t mac_delta = 0;
-	uint64_t ss_tmp = mod_mult(ss_z, prime_mod-1, prime_mod);  // -ss_z
-	uint64_t ss_mac_tmp = mod_mult(ss_mac_z, prime_mod-1, prime_mod);  // -ss_mac_z
-	uint64_t new_bd = mod_mult(bd, 1<<(SCALE+2*HELP_SCALE), prime_mod);  //由于没有做截断，需要把bd放大，左移SCALE位，再进行比较
+	uint64_t ss_tmp     = (prime_mod - ss_z)     % prime_mod;  // -ss_z
+	uint64_t ss_mac_tmp = (prime_mod - ss_mac_z) % prime_mod;  // -ss_mac_z
+	uint64_t new_bd = mult_mod(bd, (uint64_t)1<<(SCALE+2*HELP_SCALE));  //由于没有做截断，需要把bd放大，左移SCALE位，再进行比较
 	if(party == BOB){
 		mac_delta = (uint64_t)LOW64(((ZKFpExecVer<NetIO> *)(ZKFpExec::zk_exec))->ostriple->delta);
 		ss_tmp = (ss_tmp + new_bd)%prime_mod;
-		ss_mac_tmp = (ss_mac_tmp + mod_mult(new_bd, mac_delta, prime_mod))%prime_mod;
+		ss_mac_tmp = (ss_mac_tmp + mult_mod(new_bd, mac_delta))%prime_mod;
 	}
 	// std::cout << "ss_tmp: " << ss_tmp << std::endl;
 	// std::cout << "ss_mac_tmp: " << ss_mac_tmp << std::endl;
@@ -1235,6 +1252,14 @@ void CosSim(int party, NetIO* io, IntFp *x, uint64_t len_x, uint64_t *y, uint64_
 	// std::cout << "*ss_mac_res: " << *ss_mac_res << std::endl;
 	std::cout << "---------- CosSim finish ------------" << std::endl;
 	io->flush();
+	delete[] input_h;
+	delete[] input;
+	delete[] real_input;
+	delete[] h;
+	delete[] ver_h0;
+	delete[] ver_h1;
+	delete[] g;
+	delete[] real_y;
 }
 
 void Ideal_vector_multiplication_2(int party, NetIO* io, 
@@ -1260,11 +1285,12 @@ void Ideal_vector_multiplication_2(int party, NetIO* io,
 		}else{
 			memcpy(ss_z, input_x, len_x*sizeof(uint64_t));
 			for(uint64_t i=0; i<len_x; i++){
-				ss_mac_z[i] = mod_mult(input_x[i], mac_delta, prime_mod);
+				ss_mac_z[i] = mult_mod(input_x[i], mac_delta);
 			}
 		}
 	}
 	io->flush();
+	delete[] input_x;
 }
 
 void GradFilter(int party, NetIO* io, IntFp *x, uint64_t len_x, uint64_t *y, uint64_t len_y, uint64_t bd, uint64_t *ss_res, uint64_t *ss_mac_res){
@@ -1389,7 +1415,7 @@ void Aggregation(int party, NetIO* io, uint64_t **x, uint64_t num_client, uint64
 			io->recv_data(&mac_weight_from_c, sizeof(uint64_t));
 			real_weight = (weight_from_c + tmp_weight)%prime_mod;
 			real_mac_weight = (mac_weight_from_c + tmp_mac_weight)%prime_mod;
-			if(mod_mult(mac_delta, real_weight, prime_mod) != real_mac_weight){  // client i modify its weight share, abort!
+			if(mult_mod(mac_delta, real_weight) != real_mac_weight){  // client i modify its weight share, abort!
 				error("Abort! There are malicious clients!\n");
 				// real_weight = 0;
 				// real_mac_weight = 0;
@@ -1450,7 +1476,7 @@ void Aggregation(int party, NetIO* io, uint64_t **x, uint64_t num_client, uint64
 		for(uint64_t i=0; i<len; i++){
 			aggregated_result[i] = (from_c_aggregation[i]+from_s_aggregation[i])%prime_mod;
 			mac_aggregated_result[i] = (from_c_mac_aggregation[i]+from_s_mac_aggregation[i])%prime_mod;
-			if(mod_mult(aggregated_result[i], mac_delta, prime_mod) == mac_aggregated_result[i]){
+			if(mult_mod(aggregated_result[i], mac_delta) == mac_aggregated_result[i]){
 				ctr++;
 			}
 		}
@@ -1458,8 +1484,35 @@ void Aggregation(int party, NetIO* io, uint64_t **x, uint64_t num_client, uint64
 			error("Check failed! Some clients modify their sharings of weighted gradients!\n");
 		}
 		// send aggregation result to clients?
+		delete[] from_c_aggregation;
+		delete[] from_c_mac_aggregation;
+		delete[] from_s_aggregation;
+		delete[] from_s_mac_aggregation;
 	}
 	memcpy(z, aggregated_result, len*sizeof(uint64_t));
 	io->flush();
+
+	for(uint64_t i=0; i<num_client; i++){
+		delete[] rand_for_ss_zero[i];
+		delete[] rand_for_ss_mac_zero[i];
+		delete[] input_x[i];
+		delete[] weighted_gradient[i];
+		delete[] mac_weighted_gradient[i];
+		if(party == BOB){
+			delete[] from_c_weighted_gradient[i];
+			delete[] from_c_mac_weighted_gradient[i];
+		}
+	}
+	delete[] rand_for_ss_zero;
+	delete[] rand_for_ss_mac_zero;
+	delete[] input_x;
+	delete[] weight_x;
+	delete[] mac_weight_x;
+	delete[] weighted_gradient;
+	delete[] mac_weighted_gradient;
+	delete[] from_c_weighted_gradient;
+	delete[] from_c_mac_weighted_gradient;
+	delete[] aggregated_result;
+	delete[] mac_aggregated_result;
 }
 

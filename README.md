@@ -1,5 +1,5 @@
 # SecAgg-voleZK-mpc
-This repo contains implementation of our scheme "Rhinobird: Efficient Integrity Defense for Secure Aggregation against Malicious Clients". The repository is built on \[[emp-toolkit](https://github.com/emp-toolkit)\] and \[[SIMC](https://github.com/shahakash28/simc)\].
+This repo contains implementation of our scheme "Vespa: Efficient Secure Aggregation with Integrity Defense under Server Privacy". The repository is built on \[[emp-toolkit](https://github.com/emp-toolkit)\] and \[[SIMC](https://github.com/shahakash28/simc)\].
 
 
 # Installation
@@ -33,10 +33,10 @@ This repo contains implementation of our scheme "Rhinobird: Efficient Integrity 
    sudo make install
    ```
 4. Do the same for emp-ot repository.
-5. Finally, do the same in `Rhinobird` repository. (if any ".cmake" missing, find it in emp-toolkit)
+5. Finally, do the same in `SecAgg` repository. (if any ".cmake" missing, find it in emp-toolkit)
 
 # Run
-Run the following test files from path `SecAgg-voleZK-mpc/Rhinobird`:
+Run the following test files from path `SecAgg-voleZK-mpc/SecAgg`:
 
 Examples:
 

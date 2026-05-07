@@ -8,7 +8,7 @@ typedef unsigned char byte;
 #include <string>
 #include <vector>
 
-#include "emp-zk/emp-vole/utility.h"  // 里面有PR
+#include "emp-zk/emp-vole/utility.h"  
 
 class ZpMersenneIntElement {
   // private:
@@ -144,7 +144,7 @@ public:
     uint64_t bottom = multLong & PR;
 
     // get the top 31 bits
-    uint64_t top = (multLong >> 61);  //之前是31  
+    uint64_t top = (multLong >> 61); 
     elem = bottom + top;
 
     // maximim the value of 2p-2

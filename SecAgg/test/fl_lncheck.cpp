@@ -48,7 +48,7 @@ uint64_t ncheck = 1 << 10;
 
 // void LnCheck(int party, IntFp *x, uint64_t len_x, uint64_t bd)
 // {
-// 	// parse x = s * hx, s为0或1, hx为x的绝对值
+// 	// parse x = s * hx
 // 	uint64_t *s = new uint64_t[len_x];
 // 	uint64_t *hx = new uint64_t[len_x];
 // 	if(party == ALICE){

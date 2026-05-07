@@ -32,20 +32,10 @@ LUTTwoValueIntFp *LUTCmpLx[CMP_LUT_NUM];
 void startComputation(int party)
 {
     // LUTRange
-    for (int i = 2; i < NUM_RANGE; i++){  // 实际只是用2~12个比特长度 每个分别放置再相同的index上
+    for (int i = 2; i < NUM_RANGE; i++){  
         LUTRange[i] = new LUTRangeIntFp(party);
         LUTRange[i]->LUTRangeinit(1ULL << i);
     }
-
-    // // LUTmsnzb  index \in [0, ceil(logP) - 2]
-    // LUTmsnzb = new LUTIntFp(party);
-    // uint64_t lutSize = ceil(log2(PR)) - 1;
-    // vector<uint64_t> data;
-    // for (int i = 0; i < lutSize; i++){
-    //     data.push_back(1ULL << i);   // 必须是1ULL，而非1，否则结果出错(在左移31位时报错)
-    // }
-    // LUTmsnzb->LUTinit(data);
-    // data.resize(0);
 
     uint64_t lutSize = ceil(log2(PR)) - 1;
     vector<uint64_t> coff1;
@@ -157,7 +147,7 @@ void startComputation(int party)
     last_lutsize = 1ULL << CMP_LAST_DIGIT_BITLEN;
 
     // decomposite constant = (p+1)/2
-    uint64_t c = (PR + 1)/2;                                      // TODO: c作为startcomputation()的参数传进来？？
+    uint64_t c = (PR + 1)/2;                                    
     uint64_t *c_digit = new uint64_t[FINIAL_CMP_LUT_NUM];
     uint64_t c_digit_mask = (1ULL << CMP_DIGIT_LEN) - 1;
     for (int i = 0; i < FINIAL_CMP_LUT_NUM - 1; i++){
@@ -345,7 +335,6 @@ void startComputation(int party)
 
 void endComputation(int party)
 {
-    // delete[] LUTRange;  // 不能直接这样delete，会报错 因为并不是整个LUTRange数组都new了对象
     for (int i = 2; i < NUM_RANGE; i++){  
         delete LUTRange[i];
     }

@@ -21,7 +21,7 @@
 // #include <cmath>
 // #include <thread>
 
-#define HELP_SCALE 0   //把实数嵌入域时，放大更多倍，减少误差
+#define HELP_SCALE 0   
 
 // fl_comp
 #define SHL128(v, n) \
@@ -82,7 +82,7 @@ extern FCField he_fc;
 void Zk2Mpc(int party, NetIO *io, IntFp *x, uint64_t len_x, uint64_t *y, uint64_t len_y, uint64_t *x_value, uint64_t *mac_M, uint64_t *delta, uint64_t *mac_K);
 // fl_comp
 void Zk2Mpc(int party, NetIO *io, uint64_t *x, uint64_t *mac_x, uint64_t len_x, uint64_t *delta);
-// void LinearLayerFC(int party, NetIO *io, uint64_t common_dim); // 需要提取一个数据处理函数，把zk的数据转换为同态加密函数能够处理的数据
+// void LinearLayerFC(int party, NetIO *io, uint64_t common_dim); 
 void vector_multiplication(int party, NetIO* io, IntFp *x, uint64_t len_x, 
 							uint64_t *y, uint64_t len_y, uint64_t *ss_z, uint64_t *ss_mac_z);
 void vector_bool_multiplication(int party, NetIO* io, IntFp *x, 

@@ -112,15 +112,13 @@ void vector_multiplication(int party, NetIO* io, IntFp *x, uint64_t len_x,
 	uint64_t *tmp_y = new uint64_t[len];
   	memcpy(tmp_y, y, len*sizeof(uint64_t));
 
-  	// 统计开销时需要减掉这部分通信开销
   	uint64_t start_comm = io->counter;
 	auto start_time = clock_start();
-  	Zk2Mpc(party, io, x, len, tmp_y, len, input_x, mac_M, &mac_key, mac_K);  // 在此之前，ALICE是client，BOB是server；在此之后，ALICE是server，BOB是client
+  	Zk2Mpc(party, io, x, len, tmp_y, len, input_x, mac_M, &mac_key, mac_K);  
 	io->flush();
 	v_time += time_from(start_time);
   	v_comm += (io->counter - start_comm);
   
-  	// 对数据进行处理
 	// FCField he_fc(party, io);
   	uint64_t num_cols = 1;
   	uint64_t num_rows = 1;
@@ -192,15 +190,13 @@ void vector_bool_multiplication(int party, NetIO* io, IntFp *x,
   	uint64_t *mac_K = new uint64_t[len];
   	memset(mac_K, 0, len*sizeof(uint64_t));
 
-  	// 统计开销时需要减掉这部分通信开销
   	uint64_t start_comm = io->counter;
 	auto start_time = clock_start();
-  	Zk2Mpc(party, io, x, len, &y, 1, input_x, mac_M, &mac_key, mac_K);  // 在此之前，ALICE是client，BOB是server；在此之后，ALICE是server，BOB是client
+  	Zk2Mpc(party, io, x, len, &y, 1, input_x, mac_M, &mac_key, mac_K);  
   	io->flush();
 	v_time += time_from(start_time);
 	v_comm += (io->counter - start_comm);
   
-  	// 对数据进行处理
 	// FCField he_fc(party, io);
   	uint64_t num_cols = 1;
   	uint64_t num_rows = 1;
@@ -402,7 +398,7 @@ void decrypt_ciphertexts(Integer *garbled_data, uint64_t *ciphertexts, uint64_t*
 void comparison(int party, int tid, NetIO* io, uint64_t* inputs, uint64_t nrelu, 
 				uint64_t* ip_ss, uint64_t* op_ss, uint64_t* op_mss, uint64_t mac_key, block *delta_blocks, int bitlen)
 {
-  bitlen = bitlen + 1; // 计算时需要多一位保证不溢出
+  bitlen = bitlen + 1;
   //Public prime values
   Integer p(bitlen, prime_mod, PUBLIC);
   Integer p_mod2(bitlen, prime_mod/2, PUBLIC);
@@ -515,7 +511,6 @@ void Wrap_comparison(int party, int tid, NetIO* io, uint64_t *ss_x, uint64_t *ss
 	CircuitExecution *tmp_circ_exec = CircuitExecution::circ_exec;
 	ProtocolExecution *tmp_prot_exec = ProtocolExecution::prot_exec;
 
-	// 额外开销，需要减掉
 	uint64_t start_comm = io->counter;
 	auto start_time = clock_start();
 	if(party == ALICE) {
@@ -1220,8 +1215,8 @@ void CosSim(int party, NetIO* io, IntFp *x, uint64_t len_x, uint64_t *y, uint64_
 	
 	// compute vec(x) cdot vec(y)
 	uint64_t ss_z = 0, ss_mac_z = 0;
-	// Ideal_vector_multiplication(party, io, ss_h, ss_mac_h, len, g, len, &ss_z, &ss_mac_z, mac_delta);  //不做截断，小数位数翻倍
-	// Ideal_vector_multiplication_1(party, io, h, len, g, len, &ss_z, &ss_mac_z);			//不做截断，小数位数翻倍
+	// Ideal_vector_multiplication(party, io, ss_h, ss_mac_h, len, g, len, &ss_z, &ss_mac_z, mac_delta);  
+	// Ideal_vector_multiplication_1(party, io, h, len, g, len, &ss_z, &ss_mac_z);			
 	vector_multiplication(party, io, h, len, g, len, &ss_z, &ss_mac_z);
 	io->flush();
 	// std::cout << "ss_z: " << ss_z << std::endl;
@@ -1233,7 +1228,7 @@ void CosSim(int party, NetIO* io, IntFp *x, uint64_t len_x, uint64_t *y, uint64_
 	uint64_t mac_delta = 0;
 	uint64_t ss_tmp     = (prime_mod - ss_z)     % prime_mod;  // -ss_z
 	uint64_t ss_mac_tmp = (prime_mod - ss_mac_z) % prime_mod;  // -ss_mac_z
-	uint64_t new_bd = mult_mod(bd, (uint64_t)1<<(SCALE+2*HELP_SCALE));  //由于没有做截断，需要把bd放大，左移SCALE位，再进行比较
+	uint64_t new_bd = mult_mod(bd, (uint64_t)1<<(SCALE+2*HELP_SCALE));  
 	if(party == BOB){
 		mac_delta = (uint64_t)LOW64(((ZKFpExecVer<NetIO> *)(ZKFpExec::zk_exec))->ostriple->delta);
 		ss_tmp = (ss_tmp + new_bd)%prime_mod;
@@ -1266,7 +1261,6 @@ void Ideal_vector_multiplication_2(int party, NetIO* io,
 									IntFp *x, uint64_t len_x, uint64_t y, uint64_t mac_delta,
 									uint64_t *ss_z, uint64_t *ss_mac_z)
 {
-	// 需要实现一个bool乘以vector，实际实现时对原本的乘法进行简化即可
 	// [x] held by client and server, y held by server, compute <xy> and <delta*xy>
 	uint64_t *input_x = new uint64_t[len_x];
 	memset(input_x, 0, len_x*sizeof(uint64_t));
@@ -1431,7 +1425,7 @@ void Aggregation(int party, NetIO* io, uint64_t **x, uint64_t num_client, uint64
 		mac_weighted_gradient[i] = new uint64_t[len];
 		memset(mac_weighted_gradient[i], 0, len*sizeof(uint64_t));
 		// Ideal_vector_multiplication_2(party, io, input_x[i], len, real_weight, mac_delta, weighted_gradient[i], mac_weighted_gradient[i]);
-		vector_bool_multiplication(party, io, input_x[i], len, real_weight, weighted_gradient[i], mac_weighted_gradient[i]); // 在该函数中角色进行了调换，但不影响Aggregation函数继续按照原定的角色继续执行
+		vector_bool_multiplication(party, io, input_x[i], len, real_weight, weighted_gradient[i], mac_weighted_gradient[i]); 
 
 		// clients mask weighted gradients and send them to server
 		if(party == ALICE){

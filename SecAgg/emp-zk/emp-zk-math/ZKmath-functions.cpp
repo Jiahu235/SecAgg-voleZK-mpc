@@ -1,26 +1,23 @@
 #include "emp-zk/emp-zk-math/ZKmath-functions.h"
 
-void ZKPositiveDigDec(int party, IntFp *x, IntFp *y, uint64_t *digit_size, int num_digits, int dim)  // x:dim；y:num_digits*dim; num_digits:子串数，digit_size:每个子串的比特长度 digit_size:num_digits
+void ZKPositiveDigDec(int party, IntFp *x, IntFp *y, uint64_t *digit_size, int num_digits, int dim)  
 {
 	uint64_t curr_x = 0;
 	uint64_t ori_y = 0;
-	IntFp *sum_ydigits = new IntFp[dim];  // 生成sum_ydigits是为了进行Prove时使用
+	IntFp *sum_ydigits = new IntFp[dim];  
 	vector<IntFp> zero;
 
-	// step1: compute y + check range
 	for (int i = 0; i < dim; i++){
-		// step 1: 数字分解最低位
 		int shiftlen = 0;
 		uint64_t curr_digitlen = digit_size[0];
 		uint64_t digit_mask = (1ULL << curr_digitlen) - 1;
 		if (party == ALICE){
 			curr_x = (uint64_t)HIGH64(x[i].value);
-			ori_y = (curr_x >> shiftlen) & digit_mask; // 此处先放了低位子串
+			ori_y = (curr_x >> shiftlen) & digit_mask; 
 		}
 		sum_ydigits[i] = IntFp(ori_y, ALICE);
 		y[i * num_digits] = sum_ydigits[i]; 
 
-		// step 2: check 分解出的最低位的 range
 		if (curr_digitlen > 1 && curr_digitlen < NUM_RANGE){
 			LUTRange[curr_digitlen]->LUTRangeread(y[i * num_digits]);
 		} else if (curr_digitlen == 1){
@@ -31,17 +28,15 @@ void ZKPositiveDigDec(int party, IntFp *x, IntFp *y, uint64_t *digit_size, int n
 		}
 
 		for (int j = 1; j < num_digits; j++){
-			// step 3: 数字分解其余位
 			curr_digitlen = digit_size[j];
 			digit_mask = (1ULL << curr_digitlen) - 1;
 			shiftlen += digit_size[j - 1];
 			if (party == ALICE){
-				ori_y = (curr_x >> shiftlen) & digit_mask; // 此处先放了低位子串
+				ori_y = (curr_x >> shiftlen) & digit_mask; 
 			}
 			IntFp y_digit = IntFp(ori_y, ALICE);
 			y[i * num_digits + j] = y_digit; 
 
-			// step 4: checkrange
 			if (curr_digitlen > 1 && curr_digitlen < NUM_RANGE){
 				LUTRange[curr_digitlen]->LUTRangeread(y_digit);
 			} else if (curr_digitlen == 1){
@@ -51,11 +46,9 @@ void ZKPositiveDigDec(int party, IntFp *x, IntFp *y, uint64_t *digit_size, int n
 				error("Incorrect decomposition length");
 			}
 
-			// step 4: 求和
 			sum_ydigits[i] = sum_ydigits[i] + y_digit * (1ULL << shiftlen);
 		}
 
-		// step 5: checkzero
 		IntFp z = x[i] + sum_ydigits[i].negate();
 		zero.push_back(z);
 
@@ -78,12 +71,11 @@ void ZKPositiveDigDec(int party, IntFp *x, IntFp *y, uint64_t *digit_size, int n
 	delete[] sum_ydigits;
 }
 
-void ZKPositiveDigDecAny(int party, IntFp *x, IntFp *xhigh, IntFp *xlow, uint64_t highsize, uint64_t lowsize, int dim)    // 分解成任意长度 x: dim; xhigh: dim; ylow: dim
+void ZKPositiveDigDecAny(int party, IntFp *x, IntFp *xhigh, IntFp *xlow, uint64_t highsize, uint64_t lowsize, int dim)    
 {
 	uint64_t k = ceil(log2(PR));
 	assert(highsize + lowsize < k);
 
-	// step 1: 处理分解长度到合适
 	uint64_t high_num_digit = ceil((double)highsize/(NUM_RANGE - 1));
 	uint64_t most_highsize = highsize - (high_num_digit - 1) * (NUM_RANGE - 1);
 	// cout << "highsize = " << highsize << endl;
@@ -96,7 +88,6 @@ void ZKPositiveDigDecAny(int party, IntFp *x, IntFp *xhigh, IntFp *xlow, uint64_
 	// cout << "low_num_digit = " << low_num_digit << endl;
 	// cout << "most_lowsize = " << most_lowsize << endl;
 
-	// step 2: 构造uint64_t *digit_size和int num_digits
 	// cout << "@@@@@@@ begin step 2" << endl;
 	uint64_t num_digits = high_num_digit + low_num_digit;
 	uint64_t *digit_size = new uint64_t[num_digits];
@@ -117,7 +108,6 @@ void ZKPositiveDigDecAny(int party, IntFp *x, IntFp *xhigh, IntFp *xlow, uint64_
 	// step 4: construct y
 	// cout << "@@@@@@@ begin step 4" << endl;
 	for (int i = 0; i < dim; i++){
-		// -- 先处理低位
 		int shiftlen = 0;
 		xlow[i] = y_digits[i * num_digits];
 		for (int j = 1; j < low_num_digit; j++){
@@ -125,7 +115,6 @@ void ZKPositiveDigDecAny(int party, IntFp *x, IntFp *xhigh, IntFp *xlow, uint64_
 			xlow[i] = xlow[i] + y_digits[i * num_digits + j] * (1ULL << shiftlen);
 		}
 
-		// -- 再处理高位
 		shiftlen = 0;
 		xhigh[i] = y_digits[i * num_digits + low_num_digit];
 		for (int j = 1; j < high_num_digit; j++){
@@ -153,7 +142,6 @@ void ZKgeneralDigDecAny(int party, IntFp *x, IntFp *y, uint64_t *digit_size, int
 	}
 	digit_size[num_digits - 1] = digit_size[num_digits - 1] - 1;
 
-	// step 2-1: 生成输入到ZKPositiveDigDec中的digit_resize和renum_digits
 	vector<uint64_t> digit_resize;
 	vector<uint64_t> each_digit_resize_num;
 	uint64_t renum_digits = 0;
@@ -170,48 +158,37 @@ void ZKgeneralDigDecAny(int party, IntFp *x, IntFp *y, uint64_t *digit_size, int
 		renum_digits += num_digit;
 	}
 
-	// step 2-2: invoke ZKPositiveDigDec
 	IntFp *tmp_y = new IntFp[dim * renum_digits];
 	ZKPositiveDigDec(party, beforeDigdec, tmp_y, digit_resize.data(), renum_digits, dim);
 
-	// step 2-3: 合并输出到原始形态
 	for (int i = 0; i < dim; i++){
 		uint64_t start_digit_index = 0;
 		for (int j = 0; j < num_digits; j++){
 
-			// 初始化为(分解出的最低子串)
 			int shiftlen = 0;
 			y[i * num_digits + j] = tmp_y[i * renum_digits + start_digit_index];
 
-			// 属于当前y子串的(分解出的所有子串)的数量
 			uint64_t curr_redigits_num = each_digit_resize_num[j];
 
-			// 累加属于当前y子串的(分解出的所有子串)
 			for (int k = 1; k < curr_redigits_num; k++){
 				IntFp curr_digit = tmp_y[i * renum_digits + start_digit_index + k];
 				shiftlen += digit_resize[start_digit_index + k - 1];
 				y[i * num_digits + j] = y[i * num_digits + j] + curr_digit * (1ULL << shiftlen);
 			}
 
-			// 为下一个y子串指明(分解出的最低子串)的index
 			start_digit_index += curr_redigits_num;
 		}
 
-	// step 3: compute y_{k-1}
 		y[i * num_digits + (num_digits - 1)] = y[i * num_digits + (num_digits - 1)] + b[i] * (1ULL << digit_size[num_digits - 1]);
 	}
 
-	// // step 3: compute y_{k-1}
-	// for (int i = 0; i < dim; i++){
-	// 	y[i * num_digits + (num_digits - 1)] = y[i * num_digits + (num_digits - 1)] + b[i] * (1ULL << digit_size[num_digits - 1]);
-	// }
 
 	delete[] b;
 	delete[] beforeDigdec;
 	delete[] tmp_y;
 }
 
-void ZKpositiveTruncAny(int party, IntFp *x, IntFp *y, int dim, uint64_t trunclen)   // 截断任意长度
+void ZKpositiveTruncAny(int party, IntFp *x, IntFp *y, int dim, uint64_t trunclen)   
 {
 	uint64_t m = ceil(log2(PR)) - 1;
 	IntFp *ylow = new IntFp[dim];
@@ -222,7 +199,6 @@ void ZKpositiveTruncAny(int party, IntFp *x, IntFp *y, int dim, uint64_t truncle
 
 void ZKgeneralTruncAny(int party, IntFp *x, IntFp *y, int dim, uint64_t trunclen)   
 {
-	// step 1: cmp
 	IntFp *b = new IntFp[dim];
 	// ZKcmpReal(party, x, b, dim);
 	uint64_t constant = (PR + 1)/2;
@@ -256,7 +232,7 @@ void ZKgeneralTruncAny(int party, IntFp *x, IntFp *y, int dim, uint64_t trunclen
 	delete[] t2;
 }
 
-void ZKCompareShift(IntFp *x, IntFp *y, int shiftlen, int dim)    // funcationality: 与2^{ceil(logPR) - 1}比较大小，可以通过简单的右移实现；
+void ZKCompareShift(IntFp *x, IntFp *y, int shiftlen, int dim)    
 {
 	Integer *x_bool = new Integer[dim];
 	Integer *y_bool = new Integer[dim];
@@ -270,14 +246,14 @@ void ZKCompareShift(IntFp *x, IntFp *y, int shiftlen, int dim)    // funcational
 	delete[] y_bool;
 }
 
-void ZKCompareConstant(IntFp *x, uint64_t y, IntFp *z, int dim)   // if <= output 1; 比ZKCompareShift更复杂的比较，即通过简单的右移无法实现
+void ZKCompareConstant(IntFp *x, uint64_t y, IntFp *z, int dim)   
 {
 	Integer *x_bool = new Integer[dim];
 	Integer *z_bool = new Integer[dim];
 	arith2bool<BoolIO<NetIO>>(x_bool, x, dim);
 
 	// cout << "x_bool.size = " << x_bool[0].size() << endl;
-	Integer y_bool = Integer(x_bool[0].size(), y + 1, PUBLIC);  // 将<=转化为<，warning: 条件是y+1不溢出
+	Integer y_bool = Integer(x_bool[0].size(), y + 1, PUBLIC);  
 	// Integer one = Integer(1, PUBLIC);
 
 	for (int i = 0; i < dim; i++){
@@ -290,7 +266,7 @@ void ZKCompareConstant(IntFp *x, uint64_t y, IntFp *z, int dim)   // if <= outpu
 	delete[] z_bool;
 }
 
-void ZKFpCompare(IntFp *x, IntFp *y, IntFp *z, int dim)    // if x < y output 1 两个MAC值的比较
+void ZKFpCompare(IntFp *x, IntFp *y, IntFp *z, int dim)   
 {
 	Integer *x_bool = new Integer[dim];
 	Integer *y_bool = new Integer[dim];
@@ -309,12 +285,11 @@ void ZKFpCompare(IntFp *x, IntFp *y, IntFp *z, int dim)    // if x < y output 1 
 	delete[] z_bool;
 }
 
-void ZKFpCompareLEQ(IntFp *x, IntFp *y, IntFp *z, int dim)    // if x <= y outout 1 两个MAC值的比较
+void ZKFpCompareLEQ(IntFp *x, IntFp *y, IntFp *z, int dim)  
 {
-	// step 1: 将<= 转化为 <
 	IntFp *yaddone = new IntFp[dim];
 	for (int i = 0; i < dim; i++){
-		yaddone[i] = y[i] + 1;   // warning: y+1不溢出才可以
+		yaddone[i] = y[i] + 1;  
 	}
 	Integer *x_bool = new Integer[dim];
 	Integer *y_bool = new Integer[dim];
@@ -333,72 +308,6 @@ void ZKFpCompareLEQ(IntFp *x, IntFp *y, IntFp *z, int dim)    // if x <= y outou
 	delete[] y_bool;
 	delete[] z_bool;
 }
-
-
-// // ZKcmpReal: old version that needs to limit the range of inputs
-// void ZKcmpReal(int party, IntFp *x, IntFp *y, int dim)
-// {
-// 	uint64_t *z = new uint64_t[dim];
-// 	uint64_t *y_field = new uint64_t[dim];
-// 	vector<IntFp> zero;
-// 	// step 2: define digit set
-// 	uint64_t digit_len = NUM_RANGE - 1;
-// 	uint64_t num_digit = ceil((double)(BIT_LENGTH - 1)/digit_len);
-// 	uint64_t last_digit_len = (BIT_LENGTH - 1) - (num_digit - 1) * digit_len;
-// 	uint64_t digit_mask1 = (1ULL << digit_len) - 1;
-// 	uint64_t digit_mask2 = (1ULL << last_digit_len) - 1;
-// 	IntFp *z_digit = new IntFp[num_digit];
-// 	uint64_t z_digit_field = 0;
-// 	for (int i = 0; i < dim; i++){
-// 		if (party == ALICE){
-// 			// step 1: generate z and y
-// 			uint64_t x_field = (uint64_t)HIGH64(x[i].value);
-// 			if (x_field <= (PR - 1)/2){
-// 				z[i] = x_field;
-// 				y_field[i] = 1;
-// 			} else {
-// 				z[i] = PR - x_field;
-// 				y_field[i] = 0;
-// 			}
-// 		}
-// 		// step 3: plaintext DigDec, then authZK, then checkrange
-// 		for (int j = 0; j < num_digit - 1; j++){
-// 			if (party == ALICE){
-// 				z_digit_field = (z[i] >> (digit_len * j)) & digit_mask1;
-// 			}
-// 			z_digit[j] = IntFp(z_digit_field, ALICE);
-// 			LUTRange[digit_len]->LUTRangeread(z_digit[j]);
-// 		}
-// 		if (party == ALICE){
-// 			z_digit_field = (z[i] >> (digit_len * (num_digit - 1))) & digit_mask2;
-// 		}
-// 		z_digit[num_digit - 1] = IntFp(z_digit_field, ALICE);
-// 		if (last_digit_len > 1){
-// 			LUTRange[last_digit_len]->LUTRangeread(z_digit[num_digit - 1]);
-// 		} else {
-// 			IntFp r = (z_digit[num_digit - 1].negate() + 1) * z_digit[num_digit - 1];
-// 			zero.push_back(r);
-// 		}
-// 		// step 4: generate y, then check y is a bit
-// 		y[i] = IntFp(y_field[i], ALICE);
-// 		IntFp tmp = y[i] * (y[i].negate() + 1);
-// 		zero.push_back(tmp);
-// 		// step 5: generat t, then checkzero
-// 		IntFp sum = z_digit[0];
-// 		for(int j = 1; j < num_digit; j++){
-// 			sum = sum + z_digit[j] * (1ULL << (digit_len * j));
-// 		}
-// 		IntFp t = y[i] * (sum + x[i].negate()) + (y[i].negate() + 1) * (sum + x[i]);
-// 		zero.push_back(t);
-// 	}
-// 	// step 6: batch check zero
-// 	bool res = batch_reveal_check_zero(zero.data(), zero.size());
-// 	if (!res)
-// 		error("batch_reveal_check_zero failed");
-// 	delete[] z;
-// 	delete[] y_field;
-// 	delete[] z_digit;
-// }
 
 void ZKcmpRealVrfyPositive(int party, IntFp *x, uint64_t c, IntFp *y, int dim)
 {
@@ -726,38 +635,15 @@ void ZKcmpPositive(int party, IntFp *x, uint64_t c, IntFp *y, int dim)
 	delete[] v;
 }
 
-// // Max: old version that requires A2B
-// void ZKMax(IntFp *x, IntFp *y, int rows, int cols)    // matrix中每一行求一个max; x: rows*cols  y:rows
-// {
-// 	Integer *x_bool = new Integer[rows * cols];
-// 	Integer *y_bool = new Integer[rows];
-// 	arith2bool<BoolIO<NetIO>>(x_bool, x, rows * cols);       
-// 	for (int i = 0; i < rows; i++){
-// 		y_bool[i] = x_bool[i * cols];
-// 		for (int j = 1; j < cols; j++){
-// 			Integer curr = x_bool[i * cols + j];
-// 			Bit res = curr.geq(y_bool[i]);
-// 			y_bool[i] = y_bool[i].select(res, curr);
-// 		}
-// 	}
-// 	bool2arith<BoolIO<NetIO>>(y, y_bool, rows);
-// 	delete[] x_bool;
-// 	delete[] y_bool;
-// }
 
-void ZKMax(int party, IntFp *x, IntFp *y, int rows, int cols)    // matrix中每一行求一个max; x: rows*cols  y:rows
+void ZKMax(int party, IntFp *x, IntFp *y, int rows, int cols)    
 { 
-	// step 1: Prover 生成 y
 	uint64_t x_max = 0;
 	for (int i = 0; i < rows; i++){
 		if (party == ALICE){
 			x_max = (uint64_t)HIGH64(x[i * cols].value);
 			for (int j = 1; j < cols; j++){
 				uint64_t x_field = (uint64_t)HIGH64(x[i * cols + j].value);
-				// if (x_field > x_max){
-				// 	x_max = x_field;
-				// }
-				// 注意： 此处是真实值的比较。下述情况下会更新x_max的值。当然也会有其他情况，但是其他情况不需要改变x_max的值，故不用写出来
 				if ((x_max <= (PR-1)/2) && (x_field <= (PR-1)/2) || (x_max > (PR-1)/2) && (x_field > (PR-1)/2)){
 					if (x_field > x_max){
 						x_max = x_field;
@@ -770,7 +656,6 @@ void ZKMax(int party, IntFp *x, IntFp *y, int rows, int cols)    // matrix中每
 		y[i] = IntFp(x_max, ALICE);
 	}
 
-	// step 2: compute t = x_max - x
 	IntFp *t = new IntFp[rows * cols];
 	for (int i = 0; i < rows; i++){
 		for (int j = 0; j < cols; j++){
@@ -778,13 +663,10 @@ void ZKMax(int party, IntFp *x, IntFp *y, int rows, int cols)    // matrix中每
 		}
 	}
 
-	// step 3: invoke comparison
 	IntFp *b = new IntFp[rows * cols];
-	// ZKcmpReal(party, t, b, rows * cols);
 	uint64_t constant = (PR+1)/2;
 	ZKcmpRealVrfyPositive(party, t, constant, b, rows * cols);
 
-	// step 4: multiplication and truncation
 	IntFp *d = new IntFp[rows];
 	for (int i = 0; i < rows; i++){
 		d[i] = t[i * cols];
@@ -793,7 +675,6 @@ void ZKMax(int party, IntFp *x, IntFp *y, int rows, int cols)    // matrix中每
 		for (int j = 0; j < rows; j++){
 			d[j] = d[j] * t[j * cols + i];
 		}
-		// ZKpositiveTruncAny(party, d, d, rows, SCALE);   // 我们是在check不是在计算真实值，所以无需截断，只要有0，不管是否溢出，d必然为0
 	}
 
 	// checkzero
@@ -819,77 +700,6 @@ void ZKMax(int party, IntFp *x, IntFp *y, int rows, int cols)    // matrix中每
 	delete[] d;
 }
 
-// // MSNZB: old version that requires A2B
-// void ZKmsnzb(int party, IntFp *x, IntFp *y, int dim)
-// {
-// 	uint64_t msnzb = 0;
-// 	uint64_t z = 0;
-// 	IntFp *z1 = new IntFp[dim];
-// 	// IntFp *z2 = new IntFp[dim];
-// 	for (int i = 0; i < dim; i++){
-// 		if (party == ALICE){
-// 			uint64_t curr_x = (uint64_t)HIGH64(x[i].value);
-// 			msnzb = floor(log2(curr_x));   // msnzb: 最高非零位的index (从0开始)
-// 			z = 1ULL << msnzb;
-// 		}
-// 		y[i] = IntFp(msnzb, ALICE);
-// 		IntFp value = IntFp(z, ALICE);
-//         LUTmsnzb->LUTread(y[i], value);
-// 		z1[i] = value;
-// 		// z2[i] = value * 2;
-// 	}
-// 	Integer *b0_bool = new Integer[dim];
-// 	Integer *b1_bool = new Integer[dim];
-//     // IntFp *b0 = new IntFp[dim];
-// 	// IntFp *b1 = new IntFp[dim];
-// 	// ZKFpCompareLEQ(z1, x, b0, dim);
-// 	// ZKFpCompare(x, z2, b1, dim);   // if x < y output 1
-// 	Integer *x_bool = new Integer[dim];
-// 	Integer *z1_bool = new Integer[dim];
-// 	Integer *z2_bool = new Integer[dim];
-// 	arith2bool<BoolIO<NetIO>>(x_bool, x, dim);    
-// 	arith2bool<BoolIO<NetIO>>(z1_bool, z1, dim);
-// 	Integer one = Integer(62, 1, PUBLIC);
-// 	for (int i = 0; i < dim; i++){
-// 		// step 1: 计算 b0 = 1{x >= z1}
-// 		Integer res = x_bool[i] - z1_bool[i];
-// 		b0_bool[i] = (res >> BIT_LENGTH) ^ one;
-// 		// step 2: 计算 z2 = 2*z1
-// 		z2_bool[i] = z1_bool[i] << 1;
-// 		//step 3: 计算 b1 = 1{x < z2}
-// 		res = x_bool[i] - z2_bool[i];
-// 		b1_bool[i] = res >> BIT_LENGTH;
-// 	}
-// 	// bool2arith<BoolIO<NetIO>>(b0, b0_bool, dim);
-// 	// bool2arith<BoolIO<NetIO>>(b1, b1_bool, dim);
-// 	// for (int i = 0; i < dim; i++){
-// 	// 	// b0[i] = b0[i] * b1[i] + (PR - 1);
-// 	// 	b0[i] = b0[i] + (PR - 1);
-// 	// 	b1[i] = b1[i] + (PR - 1);
-// 	// }
-// 	// bool res = batch_reveal_check_zero(b0, dim);
-// 	// if (!res)
-// 	// 	error("batch_reveal_check_zero failed");
-// 	// res = batch_reveal_check_zero(b1, dim);
-// 	// if (!res)
-// 	// 	error("batch_reveal_check_zero failed");
-// 	bool cheat = true;
-// 	for (int i = 0; i < dim; i++){
-// 		Bit eq = b0_bool[i].equal(one) & b1_bool[i].equal(one);
-// 		bool res = eq.reveal<bool>(PUBLIC);
-// 		cheat = cheat and res;
-// 	}
-// 	if (!cheat)
-// 			error("cheat!");
-// 	delete[] z1;
-// 	delete[] z1_bool;
-// 	delete[] z2_bool;
-// 	// delete[] b0;
-// 	// delete[] b1;
-// 	delete[] b0_bool;
-// 	delete[] b1_bool;
-// }
-
 void ZKmsnzb(int party, IntFp *x, IntFp *y, int dim)
 {
 	uint64_t msnzb = 0;
@@ -902,7 +712,7 @@ void ZKmsnzb(int party, IntFp *x, IntFp *y, int dim)
 	for (int i = 0; i < dim; i++){
 		if (party == ALICE){
 			uint64_t curr_x = (uint64_t)HIGH64(x[i].value);
-			msnzb = floor(log2(curr_x));   // msnzb: 最高非零位的index (从0开始)
+			msnzb = floor(log2(curr_x));   
 			z0_field = 1ULL << msnzb;
 			if (msnzb == (ceil(log2(PR)) - 2)){
 				z1_field = (PR - 1)/2;
@@ -950,7 +760,7 @@ void ZKmsnzb(int party, IntFp *x, IntFp *y, int dim)
 	delete[] in1;
 }
 
-void ZKExtend(int party, IntFp *x, IntFp *k, IntFp *y, int dim)    // 用于Div
+void ZKExtend(int party, IntFp *x, IntFp *k, IntFp *y, int dim)   
 {
 	for (int i = 0; i < dim; i++){
 		// step 1: compute mz
@@ -968,7 +778,7 @@ void ZKExtend(int party, IntFp *x, IntFp *k, IntFp *y, int dim)    // 用于Div
 	}
 }
 
-void ZKExtendSqrt(int party, IntFp *x, IntFp *k, IntFp *y, int dim)    // 用于rSqrt
+void ZKExtendSqrt(int party, IntFp *x, IntFp *k, IntFp *y, int dim)   
 {
 	for (int i = 0; i < dim; i++){
 		// step 1: compute mz
@@ -986,12 +796,11 @@ void ZKExtendSqrt(int party, IntFp *x, IntFp *k, IntFp *y, int dim)    // 用于
 	}
 }
 
-void ZKExp(int party, IntFp *x, IntFp *y, int dim)  // 向量中每个元素求指数
+void ZKExp(int party, IntFp *x, IntFp *y, int dim) 
 {
 	// step 1: DigitDec
 	IntFp *xDigDec = new IntFp[dim * EXP_LUT_NUM];
 	uint64_t *digit_size = new uint64_t[EXP_LUT_NUM];
-	// memset(digit_size, EXP_DIGIT_LEN, EXP_LUT_NUM * sizeof(uint64_t));  // 这样写结果不对
 	for (int i = 0; i < EXP_LUT_NUM - 1; i++){
 		digit_size[i] = EXP_DIGIT_LEN;
 	}
@@ -1029,7 +838,7 @@ void ZKExp(int party, IntFp *x, IntFp *y, int dim)  // 向量中每个元素求�
 	delete[] yDigDec;
 }
 
-void ZKDiv(int party, IntFp *x, IntFp *y, int dim)  //一个元素的倒数
+void ZKDiv(int party, IntFp *x, IntFp *y, int dim) 
 {
 	// step 1: msnzb
 	IntFp *k = new IntFp[dim];
@@ -1079,7 +888,7 @@ void ZKDiv(int party, IntFp *x, IntFp *y, int dim)  //一个元素的倒数
 	// for (int i = 0; i < dim; i++){
 	// 	extendLen[i] = k[i].negate() + DIV_N;
 	// }
-	ZKExtend(party, yprimeTrunc, extendLen, yprime, dim);  // 重用了yprime,放置ZKExtend的输出
+	ZKExtend(party, yprimeTrunc, extendLen, yprime, dim);  
 	ZKpositiveTruncAny(party, yprime, y, dim, DIV_N - SCALE - 1);
 
 	delete[] k;
@@ -1263,7 +1072,7 @@ void ZKGeLU(int party, IntFp *x, IntFp *y, int dim)
 	delete[] z;
 }
 
-void ZKSoftmax(int party, IntFp *x, IntFp *y, int rows, int cols)  // x: rows*cols  y: rows
+void ZKSoftmax(int party, IntFp *x, IntFp *y, int rows, int cols) 
 {
 	IntFp *max = new IntFp[rows];
 	IntFp *z = new IntFp[rows * cols];
@@ -1272,7 +1081,7 @@ void ZKSoftmax(int party, IntFp *x, IntFp *y, int rows, int cols)  // x: rows*co
 	IntFp *t = new IntFp[rows];
 	IntFp *ybeforeTrunc = new IntFp[rows * cols];
 	
-	// step 1: Max: 每一行有一个max
+	// step 1: Max
 	ZKMax(party, x, max, rows, cols);
 
 	// step 2: exp
@@ -1310,7 +1119,7 @@ void ZKSoftmax(int party, IntFp *x, IntFp *y, int rows, int cols)  // x: rows*co
 	delete[] ybeforeTrunc;
 }
 
-void ZKLayerNorm(int party, IntFp *x, IntFp *y, IntFp *gamma, IntFp *beta, int rows, int cols)  // gamma: rows; beta: rows
+void ZKLayerNorm(int party, IntFp *x, IntFp *y, IntFp *gamma, IntFp *beta, int rows, int cols)  
 {
 	// uint64_t cols_field = Real2Field(1.0/cols, SCALE);
 	int64_t x_scale = floor((double)(1.0/cols) * (1ULL << SCALE));

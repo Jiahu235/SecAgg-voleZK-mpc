@@ -11,7 +11,7 @@
 #include <iostream>
 #include "emp-sh2pc/emp-sh2pc.h"
 #include "fl_utils.h"
-// #define HELP_SCALE 0   //把实数嵌入域时，放大更多倍，减少误差
+// #define HELP_SCALE 0   
 
 using namespace std;
 using namespace emp;
@@ -56,7 +56,7 @@ bool ss_zero = true;  // let the sharing of z held by client be 0
 
 // void LnCheck(int party, IntFp *x, uint64_t len_x, uint64_t bd)
 // {
-// 	// parse x = s * hx, s为0或1, hx为x的绝对值
+// 	// parse x = s * hx
 // 	uint64_t *s = new uint64_t[len_x];
 // 	uint64_t *hx = new uint64_t[len_x];
 // 	if(party == ALICE){

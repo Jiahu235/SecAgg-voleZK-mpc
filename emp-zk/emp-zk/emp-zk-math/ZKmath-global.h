@@ -6,7 +6,8 @@
 #include "emp-zk/emp-zk-math/LUT-twoValue.h"
 
 #define BIT_LENGTH 59
-#define SCALE 2
+#define SCALE 12
+#define FIXINT 0
 
 // LUTRange
 #define NUM_RANGE 13

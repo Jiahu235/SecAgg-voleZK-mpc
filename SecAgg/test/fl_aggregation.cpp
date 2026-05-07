@@ -12,7 +12,7 @@
 #include "emp-sh2pc/emp-sh2pc.h"
 #include "fl_utils.h"
 
-// #define HELP_SCALE 0   //把实数嵌入域时，放大更多倍，减少误差
+// #define HELP_SCALE 0   
 
 using namespace std;
 using namespace emp;
@@ -61,7 +61,7 @@ int FilterType = 1;
 
 // void LnCheck(int party, IntFp *x, uint64_t len_x, uint64_t bd)
 // {
-// 	// parse x = s * hx, s为0或1, hx为x的绝对值
+// 	// parse x = s * hx
 // 	uint64_t *s = new uint64_t[len_x];
 // 	uint64_t *hx = new uint64_t[len_x];
 // 	if(party == ALICE){
@@ -252,7 +252,6 @@ int FilterType = 1;
 // 									IntFp *x, uint64_t len_x, uint64_t y, uint64_t mac_delta,
 // 									uint64_t *ss_z, uint64_t *ss_mac_z)
 // {
-// 	// 需要实现一个bool乘以vector，实际实现时对原本的乘法进行简化即可
 // 	// [x] held by client and server, y held by server, compute <xy> and <delta*xy>
 // 	uint64_t *input_x = new uint64_t[len_x];
 // 	memset(input_x, 0, len_x*sizeof(uint64_t));
@@ -440,8 +439,8 @@ int FilterType = 1;
 
 // 	// compute vec(x) cdot vec(y)
 // 	uint64_t ss_z = 0, ss_mac_z = 0;
-// 	// Ideal_vector_multiplication(party, io, ss_h, ss_mac_h, len, g, len, &ss_z, &ss_mac_z, mac_delta);  //不做截断，小数位数翻倍
-// 	Ideal_vector_multiplication_1(party, io, h, len, g, len, &ss_z, &ss_mac_z);			//不做截断，小数位数翻倍
+// 	// Ideal_vector_multiplication(party, io, ss_h, ss_mac_h, len, g, len, &ss_z, &ss_mac_z, mac_delta);  
+// 	Ideal_vector_multiplication_1(party, io, h, len, g, len, &ss_z, &ss_mac_z);			
 // 	// std::cout << "ss_z: " << ss_z << std::endl;
 // 	// std::cout << "ss_mac_z: " << ss_mac_z << std::endl;
 // 	// Ideal_vector_truncate(party, io, &ss_z, &ss_mac_z, 1, &ss_z, &ss_mac_z, SCALE, mac_delta);
@@ -450,7 +449,7 @@ int FilterType = 1;
 // 	uint64_t mac_delta = 0;
 // 	uint64_t ss_tmp = mod_mult(ss_z, prime_mod-1, prime_mod);  // -ss_z
 // 	uint64_t ss_mac_tmp = mod_mult(ss_mac_z, prime_mod-1, prime_mod);  // -ss_mac_z
-// 	uint64_t new_bd = mod_mult(bd, 1<<(SCALE+2*HELP_SCALE), prime_mod);  //由于没有做截断，需要把bd放大，左移SCALE位，再进行比较
+// 	uint64_t new_bd = mod_mult(bd, 1<<(SCALE+2*HELP_SCALE), prime_mod);  
 // 	if(party == BOB){
 // 		mac_delta = (uint64_t)LOW64(((ZKFpExecVer<NetIO> *)(ZKFpExec::zk_exec))->ostriple->delta);
 // 		ss_tmp = (ss_tmp + new_bd)%prime_mod;
@@ -625,7 +624,7 @@ void test_Aggregation(BoolIO<NetIO> **ios, int party)
 			#pragma omp parallel for num_threads(num_threads) schedule(static)
   			for(uint64_t j = 0; j < dimension; ++j){
 				input_c[i][j] %= 1<<(FIXINT+SCALE);
-				// if(j%8192<6114) input_c[i][j] = 0;  // 根据实际梯度
+				// if(j%8192<6114) input_c[i][j] = 0; 
 				// input_c[i][j] = (input_c[i][j]%2) ? input_c[i][j] : (prime_mod-input_c[i][j])%prime_mod;
 				real_input_c[i][j] = Field2Real(input_c[i][j], SCALE);
 				// if(inputs[i] <= (PR-1)/2) std::cout << "inputs["<< i <<"]: " << inputs[i] << std::endl;
@@ -643,7 +642,7 @@ void test_Aggregation(BoolIO<NetIO> **ios, int party)
 		#pragma omp parallel for num_threads(num_threads) schedule(static)
 		for(uint64_t i = 0; i < dimension; ++i){
 			y[i] %= 1<<(FIXINT+SCALE);
-			// if(i%8192<6114) y[i] = 0; // 根据实际梯度
+			// if(i%8192<6114) y[i] = 0; 
 			// y[i] = (y[i]%2==0) ? y[i] : (prime_mod-y[i])%prime_mod;
 			real_input_s[i] = Field2Real(y[i], SCALE);
 		}
@@ -715,7 +714,6 @@ void test_Aggregation(BoolIO<NetIO> **ios, int party)
 	double mult_time_1 = 0;
 	double comp_time_1 = 0;
 	double wait_time_1 = 0;
-	// swap_time 中包含了执行乘法过程中的等待时间，应当减去这段时间
 	// swap_time -= wait_time;
 	if(party == ALICE){
 		ios[0]->io->send_data(&swap_time, sizeof(double));

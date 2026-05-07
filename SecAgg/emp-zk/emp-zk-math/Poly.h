@@ -8,7 +8,7 @@
 class Poly {
 public:
     uint64_t step = 0;
-    uint64_t BatchSize = 100;   // TODO: BatchSize的值为多少要确定？？
+    uint64_t BatchSize = 100;  
 
     vector<IntFp> checkZero;
 

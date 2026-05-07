@@ -1,4 +1,4 @@
-#pragma once // 这个命令好使的！！爱了爱了
+#pragma once 
 
 #include "emp-zk/emp-zk-arith/zk_fp_exec.h"
 #include "emp-zk/emp-zk-arith/zk_fp_exec_prover.h"
@@ -9,7 +9,7 @@
 #include "emp-zk/emp-zk-arith/conversion.h"
 #include "emp-zk/emp-zk-arith/polynomial.h"
 
-#include "emp-zk/emp-vole/utility.h"  // 里面有PR
+#include "emp-zk/emp-vole/utility.h"  
 
 class LUTTwoValueIntFp {
 public:
@@ -18,13 +18,11 @@ public:
 	// IO *io;
     int party;  
 
-    // 以下三个是双方都能明文知道的
 	vector<uint64_t> writes_index;
 	vector<uint64_t> writes_a;
 	vector<uint64_t> writes_b;
 	vector<uint64_t> writes_version;
 
-	// 以下一个是ALICE维护的，只有ALICE知道
 	vector<uint64_t> latest_version;  
 
     // 
@@ -97,7 +95,7 @@ public:
 
 		++read_step;
 
-		if (read_step == writes_index.size() * 8){  // TODO: 该check batchsize需要确定？？
+		if (read_step == writes_index.size() * 8){ 
 			LUTTwoValuecheck();    
 			read_step = 0;
 		}
@@ -106,7 +104,6 @@ public:
 // LUT_Mac_vector_inn_prdt(): each element in MacedList should + r, and then perform element-wise multiplication
 	IntFp LUT_Mac_vector_inn_prdt(vector<IntFp> &MacedList, uint64_t r)
 	{
-		// TODO: 此处转化为低阶多项式，用QuickSilver的多项式方法优化，具体可参考ram的做法 ？？
 		IntFp out = MacedList[0] + r;
 		for (int i = 1; i < MacedList.size(); i++){
 			out = out * (MacedList[i] + r);
@@ -118,12 +115,9 @@ public:
 // LUTcheck_permutation(): check whether reads is a permutation of writes
 	void LUTTwoValuecheck_permutation(vector<IntFp> &readsMac, vector<uint64_t> &writesNoMac, vector<IntFp> &writesMac, uint64_t r)
 	{ 
-        // 将readsMac和writesMac转换为多项式并计算输入为r时的结果
 		IntFp readsOut = LUT_Mac_vector_inn_prdt(readsMac, r);
 		IntFp writesOut = LUT_Mac_vector_inn_prdt(writesMac, r);
 
-		// writesOut中添加没有Mac的部分
-		// uint64_t PR = 2305843009213693951; 
 		uint64_t writestmp = add_mod(writesNoMac[0], r);
 		for (int i = 1; i < writesNoMac.size(); i++){
 			writestmp = mult_mod(writestmp, add_mod(writesNoMac[i], r));
@@ -132,7 +126,7 @@ public:
 		writesOut = writesOut * writestmp;
 
 		// checkZero
-		IntFp checkzero = readsOut + writesOut.negate(); // 应该为readsOut - writesOut 但是 - 报错
+		IntFp checkzero = readsOut + writesOut.negate();
 
 		// cout << "writesOut = " << writesOut.reveal() << endl;
 		// cout << "readsOut = " << readsOut.reveal() << endl;
@@ -146,10 +140,8 @@ public:
 	{
 		uint64_t tmp_version;
 
-		// reads中没有的n个元素要补全
 		for (int i = 0; i < writes_index.size(); i++)
 		{
-			// 以下三个是PUBLIC，因为index和value就是函数f对应的LUT值，两方都知道; 没必要做MAC再放
 			// readsMAC_index.push_back(IntFp((uint64_t)i, PUBLIC));
 			// readsMAC_a.push_back(IntFp(writes_a[i], PUBLIC));
 			// readsMAC_b.push_back(IntFp(writes_b[i], PUBLIC));
@@ -157,15 +149,12 @@ public:
 			readsnoMAC_a.push_back(writes_a[i]);
 			readsnoMAC_b.push_back(writes_b[i]);
             
-			// 以下一个是ALICE，因为latest_version只有alice知道
-			// readsMAC_version.push_back(IntFp(latest_version[i], ALICE));    // 这样写正确性不对！！
             if (party == ALICE){
 				tmp_version = latest_version[i];
 			}
 			readsMAC_version.push_back(IntFp(tmp_version, ALICE));
 		}
 
-		// check writes和reads的size是否相同
 		assert((readsMAC_index.size() + readsnoMAC_index.size()) == (writes_index.size() + writesMAC_index.size()));
 
         // generate randomness
@@ -206,10 +195,8 @@ public:
 			readsPackList.push_back(tPack);
 		}
 
-		// check packing后，writes和reads的size是否相同
 		assert(readsPackList.size() == (writesNoMacPackList.size() + writesPackList.size()));
 
-		// check reads and writes 是否互为permutation
 		LUTTwoValuecheck_permutation(readsPackList, writesNoMacPackList, writesPackList, a[4]);
 
 		// resize reads and writesMac
@@ -227,7 +214,6 @@ public:
 		readsnoMAC_a.resize(0);
 		readsnoMAC_b.resize(0);
 
-		// 将latest_version中的所有元素置为0
 		if (party == ALICE){
 			std::fill(latest_version.begin(), latest_version.end(), 0);
 		}
